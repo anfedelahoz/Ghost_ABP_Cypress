@@ -1,0 +1,101 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=-1794
+END=11620
+title=Prueba Monkey sobre Ghost App 1. Iniciar sesion como administrador: con Usuario registrado
+[CHAPTER]
+TIMEBASE=1/1000
+START=10086
+END=25045
+title=Prueba Monkey sobre Ghost App 2. Iniciar sesion como administrador: con Usuario NO registrado
+[CHAPTER]
+TIMEBASE=1/1000
+START=35685
+END=40196
+title=Prueba Monkey sobre Ghost App 3. Iniciar sesion como administrador: con credenciales invalidas
+[CHAPTER]
+TIMEBASE=1/1000
+START=12824
+END=44713
+title=Prueba Monkey sobre Ghost App 4. Crear post: con preview
+[CHAPTER]
+TIMEBASE=1/1000
+START=16089
+END=76689
+title=Prueba Monkey sobre Ghost App 5. Crear post: con video y de acceso solo para miembros.
+[CHAPTER]
+TIMEBASE=1/1000
+START=83995
+END=137325
+title=Prueba Monkey sobre Ghost App 6. Crear pagina
+[CHAPTER]
+TIMEBASE=1/1000
+START=123014
+END=190692
+title=Prueba Monkey sobre Ghost App 7. Crear nuevo miembro manualmente
+[CHAPTER]
+TIMEBASE=1/1000
+START=256826
+END=258466
+title=Prueba Monkey sobre Ghost App 8. Crear nuevo miembro manualmente: con correo ya registrado.
+[CHAPTER]
+TIMEBASE=1/1000
+START=258628
+END=260125
+title=Prueba Monkey sobre Ghost App 9. Crear nuevo miembro manualmente: con datos invalidos
+[CHAPTER]
+TIMEBASE=1/1000
+START=260114
+END=261655
+title=Prueba Monkey sobre Ghost App 10. Editar post: con nuevo contenido de acceso todos
+[CHAPTER]
+TIMEBASE=1/1000
+START=261522
+END=263225
+title=Prueba Monkey sobre Ghost App 11. Editar post: con acceso solo a miembros
+[CHAPTER]
+TIMEBASE=1/1000
+START=263065
+END=264947
+title=Prueba Monkey sobre Ghost App 12. Recuperar contrasena: usuario registrado
+[CHAPTER]
+TIMEBASE=1/1000
+START=265789
+END=267235
+title=Prueba Monkey sobre Ghost App 13. Recuperar contrasena: usuario NO registrado
+[CHAPTER]
+TIMEBASE=1/1000
+START=266898
+END=268694
+title=Prueba Monkey sobre Ghost App 14. Recuperar contrasena: validar que se aplique el numero (5) de intentos limites
+[CHAPTER]
+TIMEBASE=1/1000
+START=268783
+END=270511
+title=Prueba Monkey sobre Ghost App 15. Recuperar contrasena: con datos invalidos
+[CHAPTER]
+TIMEBASE=1/1000
+START=269703
+END=272257
+title=Prueba Monkey sobre Ghost App 16. Invitar usuario al staff: invitar como Contribuidor
+[CHAPTER]
+TIMEBASE=1/1000
+START=272520
+END=275239
+title=Prueba Monkey sobre Ghost App 17. Invitar usuario al staff: invitar como Autor
+[CHAPTER]
+TIMEBASE=1/1000
+START=276196
+END=277981
+title=Prueba Monkey sobre Ghost App 18. Invitar usuario al staff: invitar como Editor
+[CHAPTER]
+TIMEBASE=1/1000
+START=277145
+END=279783
+title=Prueba Monkey sobre Ghost App 19. Invitar usuario al staff: invitar como Administrador
+[CHAPTER]
+TIMEBASE=1/1000
+START=279701
+END=282438
+title=Prueba Monkey sobre Ghost App 20. Invitar usuario al staff: invitar con datos invalidos

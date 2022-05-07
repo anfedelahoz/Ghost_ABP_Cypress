@@ -15,8 +15,8 @@ describe("Prueba Monkey sobre Ghost App", function () {
   function loginValid() {
     cy.visit("http://localhost:2368/ghost/");
     cy.wait(1000);
-    loginPage.getEmail().type("yourAdminEmail@gmail.com");
-    loginPage.getPassword().type("yourAdminPassword#");
+    loginPage.getEmail().type("andelahozg@gmail.com");
+    loginPage.getPassword().type("Centro2021#");
     loginPage.getPassword().type("{enter}");
     loginPage.getLoginButton().click();
   }
@@ -49,7 +49,9 @@ describe("Prueba Monkey sobre Ghost App", function () {
     createPostPage.getPostContent().type("Hi there, now we are just testing.");
     cy.wait(2500);
     createPostPage.getFirstPublishButton().click({ timeOut: 6000 });
+    cy.wait(2000);
     createPostPage.getSecondPublishButton().click({ timeOut: 6000 });
+    cy.wait(2000);
     createPostPage.getThirdPublishButton().click({ timeOut: 6000 });
   });
 
@@ -75,12 +77,15 @@ describe("Prueba Monkey sobre Ghost App", function () {
     cy.wait(1500);
     createPostPage.getPostAccessDropDown().select("members");
     createPostPage.getPostSettings().click({ force: true });
+    cy.wait(2000);
     createPostPage.getFirstPublishButton().click({ timeOut: 6000 });
+    cy.wait(2000);
     createPostPage.getSecondPublishButton().click({ timeOut: 6000 });
+    cy.wait(2000);
     createPostPage.getThirdPublishButton().click({ timeOut: 6000 });
     cy.wait(1200);
     cy.visit("http://localhost:2368/");
-    cy.wait(5000);
+    cy.wait(4000);
   });
 
   it("6. Crear pagina", function () {
@@ -94,11 +99,11 @@ describe("Prueba Monkey sobre Ghost App", function () {
     pagesSection
       .getPageContent()
       .type("This page content is for testing purposes.", { force: true });
-    cy.wait(500);
+    cy.wait(2000);
     pagesSection.getFirstPublishButton().click({ force: true });
-    cy.wait(500);
+    cy.wait(2000);
     pagesSection.getSecondPublishButton().click({ force: true });
-    cy.wait(500);
+    cy.wait(2000);
     pagesSection.getThirdPublishButton().click({ force: true });
   });
 
@@ -255,13 +260,18 @@ function editPost(title, content, accessOnlyMembers) {
     cy.wait(1500);
     createPostPage.getPostAccessDropDown().select("members");
     createPostPage.getPostSettings().click({ force: true });
+    cy.wait(2000);
     createPostPage.getFirstPublishButton().click({ timeOut: 6000 });
+    cy.wait(2000);
     createPostPage.getSecondPublishButton().click({ timeOut: 6000 });
+    cy.wait(2000);
     createPostPage.getThirdPublishButton().click({ timeOut: 6000 });
   }
-  cy.wait(1000);
+  cy.wait(2000);
   createPostPage.getFirstPublishButton().click({ force: true });
+  cy.wait(2000);
   createPostPage.getFirstPublishButton().click({ force: true });
+  cy.wait(2000);
   createPostPage.getFirstPublishButton().click({ force: true });
 }
 
