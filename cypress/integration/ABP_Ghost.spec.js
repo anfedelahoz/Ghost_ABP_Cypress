@@ -22,10 +22,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
   }
 
   it("1. Iniciar sesion como administrador: con Usuario registrado", function () {
-    cy.visit("http://localhost:2368/ghost/");
-    loginPage.getEmail().type("andelahozg@gmail.com");
-    loginPage.getPassword().type("Centro2021#");
-    loginPage.getLoginButton().click();
+    loginValid();
   });
 
   it("2. Iniciar sesion como administrador: con Usuario NO registrado", function () {
