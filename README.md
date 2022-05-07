@@ -1,5 +1,30 @@
 
-# Eventos random con Cypress.io
+
+<hr>
+<img src="https://user-images.githubusercontent.com/65487235/157884383-1b75feb1-45d8-4430-b636-3f7e06577347.png" alt="Ghost" width="200px">
+
+# Configuración de Ghost
+
+## Inicio rápido 
+
+Si desea ejecutar su propia instancia de Ghost, en la mayoría de los casos, la mejor manera es utilizar nuestro **CLI tool**
+
+```
+npm install ghost-cli -g
+```
+&nbsp;
+Luego, si instala localmente, agregue el indicador `local` para comenzar a funcionar en menos de un minuto - [Local install docs](https://ghost.org/docs/install/local/)
+```
+ghost install local
+```
+o en un servidor ejecute la instalación completa, incluida la configuración automática de SSL usando LetsEncrypt - [Production install docs](https://ghost.org/docs/install/ubuntu/)
+
+```
+ghost install
+```
+<img src="https://user-images.githubusercontent.com/66291589/167258023-93bd8c47-784e-46f4-82d8-399128c3f0c4.png" alt="Ghost" width="200px">
+
+# Configuración de Cypress.io
 Ejecute eventos al azar con la ayuda de la herramienta para pruebas automatizadas Cypress.
 
 ## Help + Testing
