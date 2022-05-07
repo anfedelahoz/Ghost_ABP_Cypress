@@ -13,24 +13,24 @@
 ## Escenarios de Prueba:
 **1. Iniciar sesión como administrador-** con usuario registrado: Como admninistrador de Ghost iniciar sesión con datos correctos y ya registrados para acceder al Dashboard de la app.\
 **2. Iniciar sesión como administrador -** con usuario NO registrado: Como admninistrador de Ghost iniciar sesión con datos correctos pero NO registrados para poder acceder al Dashboard de la app.\
-**3. Iniciar sesión como administrador -** con credenciales invalidas: Como admninistrador de Ghost iniciar sesión con datos no validos para acceder al Dashboard de la app.\
+**3. Iniciar sesión como administrador -** con credenciales invalidas: Como admninistrador de Ghost iniciar sesión con datos no validos para ver la correcta validación de los datos y el acceso a la plataforma.\
 **4. Crear nuevo post -** con preview:  Como admninistrador de Ghost iniciar sesión con datos correctos, y crear un nuevo post público que pueda ser consultado luego.\
 **5. Crear nuevo post -** con vídeo y de acceso solo para miembros: Como admninistrador de Ghost iniciar sesión con datos correctos, y crear un nuevo post con un video y de acceso solo para miembros que pueda ser consultado luego.\
 **6. Crear nueva página:** Como admninistrador de Ghost iniciar sesión con datos correctos, y crear una nueva página donde puedan ser añadidos nuevos posts.\
-**7. Crear nuevo miembro manuamente -** por primera vez: \
-**8. Crear nuevo miembro manualmente -** con correo ya registrado.\
-**9. Crear nuevo miebmro manualmente -** con datos invalidos.\
-**10. Editar post -** con nuevo contenido de acceso para todos.\
-**11. Editar post -** con acceso solo a miembros.\
-**12. Recuperar constraseña -** con usuario registrado.\
-**13. Recuperar contraseña -** con usuario NO registrado.\
-**14. Recuperar contraseña -** validar que se aplique el número (5) de intentos límites.\
-**15. Recuperar contraseña -** con datos invalidos.\
-**16. Invitar usuario al staff -** invitar como Contribuidor.\
-**17. Invitar usuario al staff -** invitar como Autor.\
-**18. Invitar usuario al staff -** invitar como Editor.\
-**19. Invitar usuario al staff -** invitar como Administrador.\
-**20. Invitar usuario al staff -** invitar con datos invalidos.
+**7. Crear nuevo miembro manuamente -** por primera vez: Como admninistrador de Ghost iniciar sesión con datos correctos, para crear un miembro por primera vez y visualizar que se actualiza el número de miembros.\
+**8. Crear nuevo miembro manualmente -** con correo ya registrado: Como admninistrador de Ghost iniciar sesión con datos correctos, para crear un miembro ya registrado y comprobar que se valida la existencia del correo ya registrado para no repetir la información.\
+**9. Crear nuevo miembro manualmente -** con datos invalidos: Como admninistrador de Ghost ingresar datos de inicio de sesión invalidos para comprovar la correcta validación de los campos antes de poder acceder al Dashboard del sitio. \
+**10. Editar post -** con nuevo contenido de acceso para todos: Como admninistrador de Ghost iniciar sesión con datos correctos, y editar la información de un post público para luego validar la actualización de la información en el sitio web.\
+**11. Editar post -** con acceso solo a miembros: Como admninistrador de Ghost iniciar sesión con datos correctos, y editar el acceso de un post para sólo miembros del sitio y luego validar que es visible en el sitio web.\
+**12. Recuperar constraseña -** con usuario registrado: Como usuario de Ghost acceder al sitio, ingresar correo registrado y seleccionar la opción de recuperar contraseña para luego esperar recibir un correo que brinde nuevo acceso.\
+**13. Recuperar contraseña -** con usuario NO registrado: Como usuario de Ghost acceder al sitio, ingresar correo no registrado para validar la correcta verificación del correo no registrado en plataforma.\
+**14. Recuperar contraseña -** validar que se aplique el número (5) de intentos límites: Como usuario de Ghost acceder al sitio, ingresar correo registrado y seleccionar la opción de recuperar contraseña por 5 veces seguidas para verificar que se cumple el límite de intentos sobre un mismo usuario.\
+**15. Recuperar contraseña -** con datos invalidos: Como usuario de Ghost acceder al sitio, ingresar datos invalidos en los campos para validar la correcta verificación y retroalimentación del sitio.\
+**16. Invitar usuario al staff -** invitar como Contribuidor: Como admninistrador de Ghost iniciar sesión con datos correctos, para invitar una nueva persona al staff del sitio y visualizar que se agrega efectivamente como Contribuidor.\
+**17. Invitar usuario al staff -** invitar como Autor: Como admninistrador de Ghost iniciar sesión con datos correctos, para invitar una nueva persona al staff del sitio y visualizar que se agrega efectivamente como Autor.\
+**18. Invitar usuario al staff -** invitar como Editor: Como admninistrador de Ghost iniciar sesión con datos correctos, para invitar una nueva persona al staff del sitio y visualizar que se agrega efectivamente como Editor.\
+**19. Invitar usuario al staff -** invitar como Administrador: Como admninistrador de Ghost iniciar sesión con datos correctos, para invitar una nueva persona al staff del sitio y visualizar que se agrega efectivamente como Administrador.\
+**20. Invitar usuario al staff -** invitar con datos invalido: Como admninistrador de Ghost iniciar sesión con datos correctos, para ingresar datos invalidos en el campo del correo y verificar la correcta verificación y retroalimentación del sitio.
 
 <hr>
 <img src="https://user-images.githubusercontent.com/65487235/157884383-1b75feb1-45d8-4430-b636-3f7e06577347.png" alt="Ghost" width="200px">
