@@ -2,7 +2,7 @@
 
 Este repositorio contiene diferentes pruebas E2E realizadas a la apliación Ghost usando Cypress, el cual es un framework de testing moderno y todo en uno. Es rápido, fácil de usar y permite ejecutar pruebas sobre cualquier aplicación web. En poco más de 2 años desde su lanzamiento de la versión 1.0.0 se ha convertido en una de las herramientas más populares de testing. Funciona en forma de caja negra, lo que significa que no es necesario tener acceso al código fuente de la aplicación, sino que se puede ejecutar con la URL de la página web. A continuación, podrá encontrar las diferentes funcionalidades probadas, los escenarios evaluados y todo lo necesario para poder ejecutar en su ambiente de trabajo las pruebas.
 
-## Funcionalidades Bajo Prueba
+## Funcionalidades Bajo Prueba: 
 
 **1. Iniciar sesión como administrador:** Funcionalidad para que un usuario del staff pueda iniciar sesión.\
 **2. Crear nuevo post:** Funcionalidad para que el administrador del contenido del sitio web pueda agregar nuevos posts.\
@@ -12,7 +12,7 @@ Este repositorio contiene diferentes pruebas E2E realizadas a la apliación Ghos
 **6. Recuperar contraseña:** Funcionalidad para que un usuario pueda recuperar su contraseña en caso de haberla olvidado.\
 **7. Invitar usuario al staff:** Funcionalidad para que un administrador pueda invitar y asignar roles de Contribuidor, Autor, Editor o Administrador.
 
-## Escenarios de Prueba
+## Escenarios de Prueba:
 **1. Iniciar sesión como administrador-** con usuario registrado: Como admninistrador de Ghost iniciar sesión con datos correctos y ya registrados para acceder al Dashboard de la app.\
 **2. Iniciar sesión como administrador -** con usuario NO registrado: Como admninistrador de Ghost iniciar sesión con datos correctos pero NO registrados para poder acceder al Dashboard de la app.\
 **3. Iniciar sesión como administrador -** con credenciales invalidas: Como admninistrador de Ghost iniciar sesión con datos no validos para ver la correcta validación de los datos y el acceso a la plataforma.\
@@ -99,13 +99,24 @@ Los pasos a continuación lo llevarán a través de Cypress.
 Siga estas instrucciones para [instalar Cypress](https://on.cypress.io/installing-cypress) de acuerdo a su SO.
 
 
-### 2. Dirigirse desde su CLI hacia la carpeta del proyecto 'Cypress_Bono'
+### 2. Dirigirse desde su CLI hacia la carpeta del proyecto 'ABP_Ghost'
 
 Ejecute los comandos con Git Bash para completar las siguientes tareas:
 - Para imprimir el directorio de trabajo actual (pwd)
 - Para navegar entre directorios en su computadora (cd)
 
-### 3. Correr Cypress 
+### 3. Abrir en su Editor de Codigo el proyecto y agregar sus credenciales de Ghost
+- En tu editor de codigo dirigete hasta el archivo ABP_Ghost.spec.js.\
+![image](https://user-images.githubusercontent.com/66291589/167267627-923fe215-a3c9-40f2-b3e5-d83cf50f77ed.png)\
+
+- En este archivo busca la funcion 'loginValid' y modifica los datos ingresados por tus credenciales de Ghost.\
+![image](https://user-images.githubusercontent.com/66291589/167267737-cb576393-f33b-49c0-931b-7b2f7d22a697.png)\
+
+En el metodo loginPage.getEmail().type("yourgGhostAdminEmail@gmail.com") debera cambiarlo por su correo administrador de Ghost.\
+En el metodo loginPage.getPassword().type("youreGhostAdminPassword#") debera cambiarlo por su contrasena administrador de Ghost.
+
+
+### 4. Correr Cypress 
 Ahora estamos listos para ejecutar las pruebas de Cypress.
 
 En su terminal escriba el siguiente comando:
