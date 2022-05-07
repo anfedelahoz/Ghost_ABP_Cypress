@@ -15,8 +15,9 @@ describe("Prueba Monkey sobre Ghost App", function () {
   function loginValid() {
     cy.visit("http://localhost:2368/ghost/");
     cy.wait(1000);
-    loginPage.getEmail().type("yourgGhostAdminEmail@gmail.com");
-    loginPage.getPassword().type("youreGhostAdminPassword#");
+    loginPage.getEmail().type("yourAdminEmail@gmail.com");
+    loginPage.getPassword().type("yourAdminPassword#");
+    loginPage.getPassword().type("{enter}");
     loginPage.getLoginButton().click();
   }
 
