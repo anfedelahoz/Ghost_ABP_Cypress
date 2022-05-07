@@ -107,6 +107,12 @@ Los pasos a continuación lo llevarán a través de Cypress.
 
 Siga estas instrucciones para [instalar Cypress](https://on.cypress.io/installing-cypress) de acuerdo a su SO.
 
+En caso de usar npm ejecute el siguiente comando.
+
+```
+ghost install
+```
+
 
 ### 2. Dirigirse desde su CLI hacia la carpeta del proyecto 'ABP_Ghost'
 
