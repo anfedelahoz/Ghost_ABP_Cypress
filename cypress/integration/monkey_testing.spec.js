@@ -7,50 +7,50 @@ import CreateMemberPage from "../support/createMember";
 import StaffPage from "../support/staffPage";
 
 describe("Prueba Monkey sobre Ghost App", function () {
-  it("Iniciar sesion como administrador", function () {
-    cy.log("1. Escenario con Usuario registrado");
-    const loginPage = new LoginPage();
+  const loginPage = new LoginPage();
+  const dashboardPage = new Dashboard();
+  const postPage = new PostsPage();
+  const createPostPage = new CreatePostPage();
+  it("1. Iniciar sesion como administrador: con Usuario registrado", function () {
     cy.visit("http://localhost:2368/ghost/");
     loginPage.getEmail().type("andelahozg@gmail.com");
     loginPage.getPassword().type("Centro2021#");
     loginPage.getLoginButton().click();
+  });
 
-    cy.log("2. Escenario con Usuario NO registrado");
+  it("2. Iniciar sesion como administrador: con Usuario NO registrado", function () {
     cy.visit("http://localhost:2368/ghost/");
     loginPage.getEmail().type("desconocido@gmail.com");
     loginPage.getPassword().type("Secret123#");
     loginPage.getLoginButton().click();
+  });
 
-    cy.log("3. Escenario con credenciales invalidas");
+  it("3. Iniciar sesion como administrador: con credenciales invalidas", function () {
     cy.visit("http://localhost:2368/ghost/");
     loginPage.getEmail().type("andelahozg");
     loginPage.getPassword().type("Centro2021#");
     loginPage.getLoginButton().click();
   });
 
-  it("Crear post", function () {
+  it("4. Crear post: con preview", function () {
     login();
-    // /* ==== Create post function ==== */
-    const dashboardPage = new Dashboard();
-    const postPage = new PostsPage();
-    const createPostPage = new CreatePostPage();
     cy.wait(3500);
-    cy.log("4. Escenario con preview");
     dashboardPage.getPostsMenu().click({ timeOut: 6000 });
     cy.wait(2500);
     postPage.getNewPostButton().click({ timeOut: 6000 });
     createPostPage.getPostTitle().type("A post for testing with Cypress");
     createPostPage.getPostContent().type("Hi there, now we are just testing.");
+    cy.wait(2500);
     createPostPage.getFirstPublishButton().click({ timeOut: 6000 });
     createPostPage.getSecondPublishButton().click({ timeOut: 6000 });
     createPostPage.getThirdPublishButton().click({ timeOut: 6000 });
+  });
 
-    cy.log("5. Escenario con video y de acceso solo para miembros.");
-    cy.wait(2500);
-    cy.visit("http://localhost:2368/ghost/");
-    cy.wait(2500);
-    dashboardPage.getPostsMenu().click({ timeOut: 6000 });
+  it("5. Crear post: con video y de acceso solo para miembros.", function () {
+    login();
     cy.wait(3500);
+    dashboardPage.getPostsMenu().click({ timeOut: 6000 });
+    cy.wait(3000);
     postPage.getNewPostButton().click({ timeOut: 6000 });
     createPostPage.getPostTitle().type("A video post for testing with Cypress");
     createPostPage.getPostContent().click({ timeOut: 6000 });
@@ -63,7 +63,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
     createPostPage
       .getYoutubeUrl()
       .type("https://www.youtube.com/watch?v=5qap5aO4i9A&ab_channel=LofiGirl");
-    cy.wait(4500);
+    cy.wait(3500);
     createPostPage.getPostSettings().click({ force: true });
     cy.wait(1500);
     createPostPage.getPostAccessDropDown().select("members");
@@ -71,12 +71,12 @@ describe("Prueba Monkey sobre Ghost App", function () {
     createPostPage.getFirstPublishButton().click({ timeOut: 6000 });
     createPostPage.getSecondPublishButton().click({ timeOut: 6000 });
     createPostPage.getThirdPublishButton().click({ timeOut: 6000 });
+    cy.wait(1200);
     cy.visit("http://localhost:2368/");
-    //   /* ==== End ==== */
+    cy.wait(5000);
   });
 
-  it("Crear pagina", function () {
-    cy.log("6. Escenario con video y de acceso solo para miembros.");
+  it("6. Crear pagina", function () {
     login();
     const pagesSection = new PagesSection();
     cy.wait(2000);
@@ -84,12 +84,9 @@ describe("Prueba Monkey sobre Ghost App", function () {
     cy.wait(3000);
     pagesSection.getNewPageButton().click({ force: true });
     pagesSection.getPageTitle().type("Testing Post");
-
     pagesSection
       .getPageContent()
-      .type("This page content is for testing purposes.", {
-        force: true,
-      });
+      .type("This page content is for testing purposes.", { force: true });
     cy.wait(500);
     pagesSection.getFirstPublishButton().click({ force: true });
     cy.wait(500);
@@ -98,7 +95,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
     pagesSection.getThirdPublishButton().click({ force: true });
   });
 
-  it("Crear nuevo miembro manualmente", function () {
+  it("7. Crear nuevo miembro manualmente", function () {
     cy.log("7. Escenario con miembro agregado por primera vez.");
     login();
     createNewMember(
@@ -107,96 +104,103 @@ describe("Prueba Monkey sobre Ghost App", function () {
       "User added for first time."
     );
     cy.wait(1000);
+  });
 
-    cy.log("8. Escenario con correo ya registrado como miembro.");
+  it("8. Crear nuevo miembro manualmente: con correo ya registrado.", function () {
+    login();
+    cy.wait(3000);
     createNewMember(
       "Pablo",
       "petertester@gmail.com",
       "User added for first time."
     );
-    cy.wait(1000);
+    cy.wait(3000);
+    cy.visit("http://localhost:2368/ghost");
+    cy.wait(2000);
     createNewMember(
       "Peter",
       "petertester@gmail.com",
       "User with an email that is already registered as member."
     );
+  });
 
-    cy.log("9. Escenario con datos invalidos.");
+  it("9. Crear nuevo miembro manualmente: con datos invalidos", function () {
+    login();
+    cy.wait(3000);
     createNewMember("Sara", "155000", "User added with invalid data.");
     cy.wait(1000);
   });
 
-  it("Editar post", function () {
-    cy.log("10. Escenario con post editado por administrador.");
+  it("10. Editar post: con nuevo contenido de acceso todos", function () {
     login();
     editPost(
       "Edited post",
       "This post was edited for testing purposes.",
       false
     );
+  });
 
-    cy.log("11. Escenario con post editado por administrador.");
-    cy.visit("http://localhost:2368/ghost/");
+  it("11. Editar post: con acceso solo a miembros", function () {
+    login();
     editPost(
       "Edited post for only members",
       "This post was edited for testing purposes and with access for only members.",
       true
     );
+    cy.wait(3000);
     cy.visit("http://localhost:2368/");
   });
 
-  it("Recuperar contrasena", function () {
-    function recoverPassword(email, attemps) {
-      const loginPage = new LoginPage();
-      cy.visit("http://localhost:2368/ghost");
-      loginPage.getEmail().type(email);
-      loginPage.getForgetPassword().click({ force: true });
-    }
+  it("12. Recuperar contrasena: usuario registrado", function () {
     cy.log("12. Escenario con usuario registrado.");
     recoverPassword("andelahozg@gmail.com");
-    // loginPage.getEmail().type('andelahozg@gmail.com')
-    // loginPage.getForgetPassword().click({ force: true });
+  });
 
-    cy.log("13. Escenario con usuario NO registrado.");
+  it("13. Recuperar contrasena: usuario NO registrado", function () {
     recoverPassword("desconocido3000@gmail.com");
-    // loginPage.getEmail().type('andelahozg@gmail.com')
-    // loginPage.getForgetPassword().click({ force: true });
+  });
 
-    cy.log(
-      "14. Escenario validar que se aplique el numero (5) de intentos limites."
-    );
+  it("14. Recuperar contrasena: validar que se aplique el numero (5) de intentos limites", function () {
     var n;
     for (var i = 0; i < 5; i++) {
       n += i;
       recoverPassword("admin@tester.com");
     }
+  });
 
-    cy.log("15. Escenario con datos invalidos.");
+  it("15. Recuperar contrasena: con datos invalidos", function () {
     recoverPassword(5501000);
   });
 
-  it("Invitar usuario al staff", function () {
-    cy.log("16. Escenario invitar como Contribuidor.");
+  it("16. Invitar usuario al staff: invitar como Contribuidor", function () {
     login();
     invitePeople("a@gmail.com");
     cy.visit("http://localhost:2368/ghost/#/settings/staff");
+  });
 
-    cy.log("17. Escenario invitar como Autor.");
-    cy.visit("http://localhost:2368/ghost");
+  it("17. Invitar usuario al staff: invitar como Autor", function () {
+    login();
     invitePeople("b@gmail.com");
+    cy.wait(1500);
     cy.visit("http://localhost:2368/ghost/#/settings/staff");
+  });
 
-    cy.log("18. Escenario invitar como Editor.");
+  it("18. Invitar usuario al staff: invitar como Editor", function () {
+    login();
     cy.visit("http://localhost:2368/ghost");
     invitePeople("c@gmail.com");
     cy.visit("http://localhost:2368/ghost/#/settings/staff");
+  });
 
-    cy.log("19. Escenario invitar como Administrador.");
+  it("19. Invitar usuario al staff: invitar como Administrador", function () {
+    login();
     cy.visit("http://localhost:2368/ghost");
     invitePeople("d@gmail.com");
     cy.visit("http://localhost:2368/ghost/#/settings/staff");
+  });
 
-    cy.log("20. Escenario invitar con datos invalidos.");
+  it("20. Invitar usuario al staff: invitar con datos invalidos", function () {
+    login();
     cy.visit("http://localhost:2368/ghost");
     invitePeople("2%&*#$^&*");
     cy.visit("http://localhost:2368/ghost/#/settings/staff");
@@ -282,6 +286,13 @@ function invitePeople(email, roleStaff) {
   staffPage.getStaffEmail().type(email);
   staffPage.getSendButton().click({ force: true });
   cy.visit("http://localhost:2368/ghost/#/settings/staff");
+}
+
+function recoverPassword(email, attemps) {
+  const loginPage = new LoginPage();
+  cy.visit("http://localhost:2368/ghost");
+  loginPage.getEmail().type(email);
+  loginPage.getForgetPassword().click({ force: true });
 }
 
 // function getRandomInt(min, max) {
