@@ -112,7 +112,7 @@ cypress open
 
 Luego, en la ventana de Cypress seleccione el proyecto 'monkey_testing.spec.js'. 
 
-Finalmente verá a Cypress en funcionamiento visitando la pagina losestudiantes.co y realizando pruebas automatizadas de eventos random. 
+Finalmente verá a Cypress en funcionamiento visitando la pagina http://localhost:2368/ y realizando pruebas automatizadas de eventos random. 
 
 
 
