@@ -1,6 +1,6 @@
 # Pruebas E2E con Cypress sobre Ghost App
 
-### Funcionalidades: 
+### Funcionalidades Bajo Prueba: 
 1. Iniciar sesión como administrador.
 2. Crear post.
 3. Crear página.
@@ -9,7 +9,7 @@
 6. Recuperar contraseña.
 7. Invitar usuario al staff.
 
-### Escenarios:
+### Escenarios de Prueba:
 1. Iniciar sesión como administrador: con usuario registrado.
 2. Iniciar sesión como administrador: con usuario NO registrado.
 3. Iniciar sesión como administrador: con credenciales invalidas.
