@@ -33,9 +33,10 @@
 **20. Invitar usuario al staff -** invitar con datos invalido: Como admninistrador de Ghost iniciar sesión con datos correctos, para ingresar datos invalidos en el campo del correo y verificar la correcta verificación y retroalimentación del sitio.
 
 <hr>
-<img src="https://user-images.githubusercontent.com/65487235/157884383-1b75feb1-45d8-4430-b636-3f7e06577347.png" alt="Ghost" width="200px">
 
 # Configuración de Ghost
+
+<img src="https://user-images.githubusercontent.com/65487235/157884383-1b75feb1-45d8-4430-b636-3f7e06577347.png" alt="Ghost" width="200px">
 
 ## Inicio rápido 
 
@@ -78,9 +79,9 @@ Ejecute la ayuda de Ghost para obtener una lista de los comandos disponibles o e
 
 <!-- End GHOST documentation  -->
 
-<img src="https://user-images.githubusercontent.com/66291589/167258023-93bd8c47-784e-46f4-82d8-399128c3f0c4.png" alt="Ghost" width="200px">
-
 # Configuración de Cypress.io
+
+<img src="https://user-images.githubusercontent.com/66291589/167258023-93bd8c47-784e-46f4-82d8-399128c3f0c4.png" alt="Ghost" width="200px">
 
 Ejecute eventos al azar con la ayuda de la herramienta para pruebas automatizadas Cypress.
 
