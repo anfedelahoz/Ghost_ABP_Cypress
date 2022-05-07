@@ -1,3 +1,12 @@
+# Integrantes
+
+| Nombre               | Correo                     |
+|----------------------|----------------------------|
+| Julian Acosta        | j.acostaj@uniandes.edu.co  |
+| Juan Felipe Tamayo   | j.tamayoo@uniandes.edu.co  |
+| Andres De la Hoz     | a.delahozg@uniandes.edu.co |
+| Julio Pupo           | jc.pupo@uniandes.edu.co    |
+
 # Pruebas E2E con Cypress sobre Ghost App
 
 Este repositorio contiene diferentes pruebas E2E realizadas a la apliación Ghost usando Cypress, el cual es un framework de testing moderno y todo en uno. Es rápido, fácil de usar y permite ejecutar pruebas sobre cualquier aplicación web. En poco más de 2 años desde su lanzamiento de la versión 1.0.0 se ha convertido en una de las herramientas más populares de testing. Funciona en forma de caja negra, lo que significa que no es necesario tener acceso al código fuente de la aplicación, sino que se puede ejecutar con la URL de la página web. A continuación, podrá encontrar las diferentes funcionalidades probadas, los escenarios evaluados y todo lo necesario para poder ejecutar en su ambiente de trabajo las pruebas.
@@ -98,6 +107,12 @@ Los pasos a continuación lo llevarán a través de Cypress.
 
 Siga estas instrucciones para [instalar Cypress](https://on.cypress.io/installing-cypress) de acuerdo a su SO.
 
+En caso de usar npm ejecute el siguiente comando.
+
+```
+ghost install
+```
+
 
 ### 2. Dirigirse desde su CLI hacia la carpeta del proyecto 'ABP_Ghost'
 
@@ -124,7 +139,10 @@ En su terminal escriba el siguiente comando:
 cypress open
 ```
 
-Luego, en la ventana de Cypress seleccione el proyecto 'monkey_testing.spec.js'. 
+Luego, en la ventana de Cypress seleccione el proyecto 'ABP_Ghost.spec.js'. 
+![image](https://user-images.githubusercontent.com/66291589/167269427-f38a96c9-77bf-48ab-97a5-c8dc82a55652.png)
+
+
 
 Finalmente verá a Cypress en funcionamiento visitando la pagina http://localhost:2368/ y realizando pruebas automatizadas de eventos random. 
 
