@@ -133,7 +133,10 @@ En su terminal escriba el siguiente comando:
 cypress open
 ```
 
-Luego, en la ventana de Cypress seleccione el proyecto 'monkey_testing.spec.js'. 
+Luego, en la ventana de Cypress seleccione el proyecto 'ABP_Ghost.spec.js'. 
+![image](https://user-images.githubusercontent.com/66291589/167269427-f38a96c9-77bf-48ab-97a5-c8dc82a55652.png)
+
+
 
 Finalmente verá a Cypress en funcionamiento visitando la pagina http://localhost:2368/ y realizando pruebas automatizadas de eventos random. 
 
