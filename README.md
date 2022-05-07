@@ -16,12 +16,13 @@
 4. Crear post: con preview.
 5. Crear post: con vídeo y de acceso solo para miembros.
 6. Crear página.
-7. Crear nuevo miembro.
+7. Crear nuevo miembro manuamente: por primera vez.
 8. Crear nuevo miembro manualmente: con correo ya registrado.
 9. Crear nuevo miebmro manualmente: con datos invalidos.
-11. Editar post: con nuevo contenido de acceso para todos.
-12. Recuperar constraseña: con usuario registrado-
-13. Recuperar contraseña: con usuario no registrado.
+10. Editar post: con nuevo contenido de acceso para todos.
+11. Editar post: con acceso solo a miembros.
+12. Recuperar constraseña: con usuario registrado.
+13. Recuperar contraseña: con usuario NO registrado.
 14. Recuperar contraseña: validar que se aplique el número (5) de intentos límites.
 15. Recuperar contraseña: con datos invalidos.
 16. Invitar usuario al staff: invitar como Contribuidor.
@@ -31,8 +32,6 @@
 20. Invitar usuario al staff: invitar con datos invalidos.
 
 ### Pros y contras
-
-
 | Pros | Contras |
 | --- | --- |
 | Son pruebas económicas porque no requieren tantas horas de humano y la mayor parte de la carga se asigna a máquinas de cómputo que pueden trabajar 24 / 7. | Al utilizar datos aleatorios es muy probable que la ejecución de las pruebas se quede detenida en una misma interfaz. |
