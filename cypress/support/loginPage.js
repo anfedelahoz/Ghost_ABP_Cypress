@@ -8,7 +8,7 @@ class LoginPage {
   }
 
   getLoginButton() {
-    return cy.get("#ember11");
+    return cy.get("span").contains("Forgot?");
   }
 
   getForgetPassword() {

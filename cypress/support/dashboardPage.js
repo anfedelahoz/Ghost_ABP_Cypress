@@ -5,7 +5,6 @@ class DashboardPage {
       cy.wrap(text).click({ force: true });
     });
   }
-
   getDraftsMenu() {
     return cy.get('[href="#/posts/?type=draft"]');
   }
