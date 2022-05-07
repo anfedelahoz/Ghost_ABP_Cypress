@@ -11,26 +11,26 @@
 **7. Invitar usuario al staff:** Funcionalidad para que un administrador pueda invitar y asignar roles de Contribuidor, Autor, Editor o Administrador.
 
 ## Escenarios de Prueba:
-**1. Iniciar sesión como administrador:** con usuario registrado.\
-**2. Iniciar sesión como administrador:** con usuario NO registrado.\
-**3. Iniciar sesión como administrador:** con credenciales invalidas.\
-**4. Crear nuevo post:** con preview.\
-**5. Crear nuevo post:** con vídeo y de acceso solo para miembros.\
-**6. Crear nueva página.**\
-**7. Crear nuevo miembro manuamente:** por primera vez.\
-**8. Crear nuevo miembro manualmente:** con correo ya registrado.\
-**9. Crear nuevo miebmro manualmente:** con datos invalidos.\
-**10. Editar post:** con nuevo contenido de acceso para todos.\
-**11. Editar post:** con acceso solo a miembros.\
-**12. Recuperar constraseña:** con usuario registrado.\
-**13. Recuperar contraseña:** con usuario NO registrado.\
-**14. Recuperar contraseña:** validar que se aplique el número (5) de intentos límites.\
-**15. Recuperar contraseña:** con datos invalidos.\
-**16. Invitar usuario al staff:** invitar como Contribuidor.\
-**17. Invitar usuario al staff:** invitar como Autor.\
-**18. Invitar usuario al staff:** invitar como Editor.\
-**19. Invitar usuario al staff:** invitar como Administrador.\
-**20. Invitar usuario al staff:** invitar con datos invalidos.
+**1. Iniciar sesión como administrador-** con usuario registrado: Como admninistrador de Ghost iniciar sesión con datos correctos y ya registrados para acceder al Dashboard de la app.\
+**2. Iniciar sesión como administrador -** con usuario NO registrado: Como admninistrador de Ghost iniciar sesión con datos correctos pero NO registrados para poder acceder al Dashboard de la app.\
+**3. Iniciar sesión como administrador -** con credenciales invalidas: Como admninistrador de Ghost iniciar sesión con datos no validos para acceder al Dashboard de la app.\
+**4. Crear nuevo post -** con preview:  Como admninistrador de Ghost iniciar sesión con datos correctos, y crear un nuevo post público que pueda ser consultado luego.\
+**5. Crear nuevo post -** con vídeo y de acceso solo para miembros: Como admninistrador de Ghost iniciar sesión con datos correctos, y crear un nuevo post con un video y de acceso solo para miembros que pueda ser consultado luego.\
+**6. Crear nueva página:** Como admninistrador de Ghost iniciar sesión con datos correctos, y crear una nueva página donde puedan ser añadidos nuevos posts.\
+**7. Crear nuevo miembro manuamente -** por primera vez: \
+**8. Crear nuevo miembro manualmente -** con correo ya registrado.\
+**9. Crear nuevo miebmro manualmente -** con datos invalidos.\
+**10. Editar post -** con nuevo contenido de acceso para todos.\
+**11. Editar post -** con acceso solo a miembros.\
+**12. Recuperar constraseña -** con usuario registrado.\
+**13. Recuperar contraseña -** con usuario NO registrado.\
+**14. Recuperar contraseña -** validar que se aplique el número (5) de intentos límites.\
+**15. Recuperar contraseña -** con datos invalidos.\
+**16. Invitar usuario al staff -** invitar como Contribuidor.\
+**17. Invitar usuario al staff -** invitar como Autor.\
+**18. Invitar usuario al staff -** invitar como Editor.\
+**19. Invitar usuario al staff -** invitar como Administrador.\
+**20. Invitar usuario al staff -** invitar con datos invalidos.
 
 ### Pros y contras
 | Pros | Contras |
@@ -39,7 +39,6 @@
 | Muy útil para encontrar crashes y excepciones en aplicaciones. | Alta tasa de eventos inválidos. |
 | Rápida ejecución, por lo que pueden ser útiles para realizar pruebas de desempeño por el volumen de eventos que pueden generar. | La replicabilidad de la secuencia de eventos generados se puede ver afectada si no se tiene un semilla o método que garantice que independientemente de la aleatoriedad se puede replicar una situación en contrada.  |
 | Es suficiente con generar un script con el recorrido de la funcionalidad para que quede listo para la ejecución tantas veces que se requiera, permitiendo de manera ágil la entrada para una estrategia de pruebas de carga.| El trabajo manual del analista es requerido en gran parte del proceso de análisis final, como validación de datos, extracción de resultados y comparación de los mismos. |
-
 
 
 <hr>
