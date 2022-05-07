@@ -64,6 +64,14 @@ o en un servidor ejecute la instalación completa, incluida la configuración au
 ```
 ghost install
 ```
+
+Adicionalmente, para instalar una versión local especifica se seguirá el siguiente comando, para nuestro caso la versión utilizada es la 4.42.0.
+
+```
+ghost install 4.42.0 --local
+```
+
+
 ¡Eso es todo! Estás listo.
 
 ## Iniciar y detener 
