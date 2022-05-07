@@ -32,15 +32,6 @@
 **19. Invitar usuario al staff -** invitar como Administrador.\
 **20. Invitar usuario al staff -** invitar con datos invalidos.
 
-### Pros y contras
-| Pros | Contras |
-| --- | --- |
-| Son pruebas económicas porque no requieren tantas horas de humano y la mayor parte de la carga se asigna a máquinas de cómputo que pueden trabajar 24/7. | Al utilizar datos aleatorios es muy probable que la ejecución de las pruebas se quede detenida en una misma interfaz. |
-| Muy útil para encontrar crashes y excepciones en aplicaciones. | Alta tasa de eventos inválidos. |
-| Rápida ejecución, por lo que pueden ser útiles para realizar pruebas de desempeño por el volumen de eventos que pueden generar. | La replicabilidad de la secuencia de eventos generados se puede ver afectada si no se tiene un semilla o método que garantice que independientemente de la aleatoriedad se puede replicar una situación en contrada.  |
-| Es suficiente con generar un script con el recorrido de la funcionalidad para que quede listo para la ejecución tantas veces que se requiera, permitiendo de manera ágil la entrada para una estrategia de pruebas de carga.| El trabajo manual del analista es requerido en gran parte del proceso de análisis final, como validación de datos, extracción de resultados y comparación de los mismos. |
-
-
 <hr>
 <img src="https://user-images.githubusercontent.com/65487235/157884383-1b75feb1-45d8-4430-b636-3f7e06577347.png" alt="Ghost" width="200px">
 
