@@ -112,8 +112,8 @@ Ejecute los comandos con Git Bash para completar las siguientes tareas:
 - En este archivo busca la funcion 'loginValid' y modifica los datos ingresados por tus credenciales de Ghost.\
 ![image](https://user-images.githubusercontent.com/66291589/167267737-cb576393-f33b-49c0-931b-7b2f7d22a697.png)\
 
-En el metodo loginPage.getEmail().type("yourgGhostAdminEmail@gmail.com") debera cambiarlo por su correo administrador de Ghost.\
-En el metodo loginPage.getPassword().type("youreGhostAdminPassword#") debera cambiarlo por su contrasena administrador de Ghost.
+En el metodo *loginPage.getEmail().type("yourgGhostAdminEmail@gmail.com")* debera cambiarlo por su correo administrador de Ghost.\
+En el metodo *loginPage.getPassword().type("youreGhostAdminPassword#")* debera cambiarlo por su contrasena administrador de Ghost.
 
 
 ### 4. Correr Cypress 
