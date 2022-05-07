@@ -99,13 +99,24 @@ Los pasos a continuación lo llevarán a través de Cypress.
 Siga estas instrucciones para [instalar Cypress](https://on.cypress.io/installing-cypress) de acuerdo a su SO.
 
 
-### 2. Dirigirse desde su CLI hacia la carpeta del proyecto 'Cypress_Bono'
+### 2. Dirigirse desde su CLI hacia la carpeta del proyecto 'ABP_Ghost'
 
 Ejecute los comandos con Git Bash para completar las siguientes tareas:
 - Para imprimir el directorio de trabajo actual (pwd)
 - Para navegar entre directorios en su computadora (cd)
 
-### 3. Correr Cypress 
+### 3. Abrir en su Editor de Codigo el proyecto y agregar sus credenciales de Ghost
+- En tu editor de codigo dirigete hasta el archivo ABP_Ghost.spec.js.\
+![image](https://user-images.githubusercontent.com/66291589/167267627-923fe215-a3c9-40f2-b3e5-d83cf50f77ed.png)\
+
+- En este archivo busca la funcion 'loginValid' y modifica los datos ingresados por tus credenciales de Ghost.\
+![image](https://user-images.githubusercontent.com/66291589/167267737-cb576393-f33b-49c0-931b-7b2f7d22a697.png)\
+
+En el metodo loginPage.getEmail().type("yourgGhostAdminEmail@gmail.com") debera cambiarlo por su correo administrador de Ghost.\
+En el metodo loginPage.getPassword().type("youreGhostAdminPassword#") debera cambiarlo por su contrasena administrador de Ghost.
+
+
+### 4. Correr Cypress 
 Ahora estamos listos para ejecutar las pruebas de Cypress.
 
 En su terminal escriba el siguiente comando:
