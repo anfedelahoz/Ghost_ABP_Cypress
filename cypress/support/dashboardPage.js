@@ -11,6 +11,7 @@ class DashboardPage {
   getScheduledMenu() {
     return cy.get('[href="#/posts/?type=scheduled"]');
   }
+
   getPublishedMenu() {
     return cy.get('[href="#/posts/?type=published"]');
   }

@@ -13,7 +13,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
   const createPostPage = new CreatePostPage();
 
   function loginValid() {
-    cy.visit("http://localhost:2368/ghost/");
+    cy.visit("http://localhost:3001/ghost/");
     cy.wait(1000);
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
@@ -52,7 +52,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
   });
 
   it("2 . Iniciar sesion como administrador: con Usuario NO registrado", function () {
-    cy.visit("http://localhost:2368/ghost/");
+    cy.visit("http://localhost:3001/ghost/");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -80,7 +80,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
   });
 
   it("3 . Iniciar sesion como administrador: con credenciales invalidas", function () {
-    cy.visit("http://localhost:2368/ghost/");
+    cy.visit("http://localhost:3001/ghost/");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -145,12 +145,6 @@ describe("Prueba Monkey sobre Ghost App", function () {
       }`
     );
     cy.wait(2000);
-    createPostPage.getThirdPublishButton().click({ timeOut: 6000 });
-    cy.screenshot(
-      `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
-        Cypress.currentTest.title
-      }`
-    );
   });
 
   it("5 . Crear post: con video y de acceso solo para miembros.", function () {
@@ -181,7 +175,6 @@ describe("Prueba Monkey sobre Ghost App", function () {
         Cypress.currentTest.title
       }`
     );
-    createPostPage.getPostFormat().click({ timeOut: 6000 });
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -194,7 +187,6 @@ describe("Prueba Monkey sobre Ghost App", function () {
         Cypress.currentTest.title
       }`
     );
-    createPostPage.getPostFormat().click({ timeOut: 6000 });
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -250,14 +242,13 @@ describe("Prueba Monkey sobre Ghost App", function () {
       }`
     );
     cy.wait(2000);
-    createPostPage.getThirdPublishButton().click({ timeOut: 6000 });
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
       }`
     );
     cy.wait(3000);
-    cy.visit("http://localhost:2368/");
+    cy.visit("http://localhost:3001/");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -312,7 +303,6 @@ describe("Prueba Monkey sobre Ghost App", function () {
       }`
     );
     cy.wait(2000);
-    pagesSection.getThirdPublishButton().click({ force: true });
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -350,7 +340,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
       }`
     );
     cy.wait(3000);
-    cy.visit("http://localhost:2368/ghost");
+    cy.visit("http://localhost:3001/ghost");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -408,7 +398,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
       }`
     );
     cy.wait(3000);
-    cy.visit("http://localhost:2368/");
+    cy.visit("http://localhost:3001/");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -464,7 +454,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
         Cypress.currentTest.title
       }`
     );
-    cy.visit("http://localhost:2368/ghost/#/settings/staff");
+    cy.visit("http://localhost:3001/ghost/#/settings/staff");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -481,7 +471,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
       }`
     );
     cy.wait(1500);
-    cy.visit("http://localhost:2368/ghost/#/settings/staff");
+    cy.visit("http://localhost:3001/ghost/#/settings/staff");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -491,7 +481,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
 
   it("18. Invitar usuario al staff: invitar como Editor", function () {
     loginValid();
-    cy.visit("http://localhost:2368/ghost");
+    cy.visit("http://localhost:3001/ghost");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -503,7 +493,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
         Cypress.currentTest.title
       }`
     );
-    cy.visit("http://localhost:2368/ghost/#/settings/staff");
+    cy.visit("http://localhost:3001/ghost/#/settings/staff");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -513,7 +503,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
 
   it("19. Invitar usuario al staff: invitar como Administrador", function () {
     loginValid();
-    cy.visit("http://localhost:2368/ghost");
+    cy.visit("http://localhost:3001/ghost");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -525,7 +515,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
         Cypress.currentTest.title
       }`
     );
-    cy.visit("http://localhost:2368/ghost/#/settings/staff");
+    cy.visit("http://localhost:3001/ghost/#/settings/staff");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -535,7 +525,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
 
   it("20. Invitar usuario al staff: invitar con datos invalidos", function () {
     loginValid();
-    cy.visit("http://localhost:2368/ghost");
+    cy.visit("http://localhost:3001/ghost");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -547,7 +537,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
         Cypress.currentTest.title
       }`
     );
-    cy.visit("http://localhost:2368/ghost/#/settings/staff");
+    cy.visit("http://localhost:3001/ghost/#/settings/staff");
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
         Cypress.currentTest.title
@@ -560,7 +550,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
 
 function createNewMember(name, email, note) {
   const newMemberPage = new CreateMemberPage();
-  cy.visit("http://localhost:2368/ghost/");
+  cy.visit("http://localhost:3001/ghost/");
   cy.screenshot(
     `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
       Cypress.currentTest.title
@@ -723,7 +713,7 @@ function editPost(title, content, accessOnlyMembers) {
 
 function invitePeople(email, roleStaff) {
   const staffPage = new StaffPage();
-  staffPage.getSettings().click({ force: true });
+
   cy.screenshot(
     `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
       Cypress.currentTest.title
@@ -742,6 +732,8 @@ function invitePeople(email, roleStaff) {
     }`
   );
   cy.wait(5000);
+  staffPage.getStaffEmail().type(email);
+  cy.wait(2000);
   if (roleStaff == "Author") {
     staffPage.getAuthor().click({ force: true });
   } else if (roleStaff == "Editor") {
@@ -756,7 +748,7 @@ function invitePeople(email, roleStaff) {
       Cypress.currentTest.title
     }`
   );
-  staffPage.getStaffEmail().type(email);
+
   cy.screenshot(
     `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
       Cypress.currentTest.title
@@ -768,7 +760,7 @@ function invitePeople(email, roleStaff) {
       Cypress.currentTest.title
     }`
   );
-  cy.visit("http://localhost:2368/ghost/#/settings/staff");
+  cy.visit("http://localhost:3001/ghost/#/settings/staff");
   cy.screenshot(
     `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
       Cypress.currentTest.title
@@ -778,7 +770,7 @@ function invitePeople(email, roleStaff) {
 
 function recoverPassword(email, attemps) {
   const loginPage = new LoginPage();
-  cy.visit("http://localhost:2368/ghost");
+  cy.visit("http://localhost:3001/ghost");
   cy.screenshot(
     `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
       Cypress.currentTest.title

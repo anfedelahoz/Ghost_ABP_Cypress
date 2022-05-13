@@ -1,38 +1,41 @@
 class StaffPage {
-  getSettings() {
-    return cy.get('[href="#/settings/"]');
-  }
-
   getStaff() {
-    return cy.get('[href="#/settings/staff/"]');
+    return cy.get('[href="#/staff/"]').then(($text) => {
+      var text = $text.get(0);
+      cy.wrap(text);
+    });
   }
 
   getInviteButton() {
     return cy.get("span").contains("Invite people");
   }
 
+  getDropDown() {
+    return cy.get("#new-user-role");
+  }
+
   getContributor() {
-    return cy.get("div").contains("Contributor");
+    return cy.get("option").contains("Contributor");
   }
 
   getAuthor() {
-    return cy.get("div").contains("Author");
+    return cy.get("option").contains("Author");
   }
 
   getEditor() {
-    return cy.get("div").contains("Editor");
+    return cy.get("option").contains("Editor");
   }
 
   getAdministrador() {
-    return cy.get("div").contains("Administrador");
+    return cy.get("option").contains("Administrador");
   }
 
   getStaffEmail() {
-    return cy.get('[placeholder="youremail@example.com"]');
+    return cy.get('[placeholder="Email Address"]');
   }
 
   getSendButton() {
-    return cy.get("span").contains("Send invitation now →");
+    return cy.get("span").contains("Send invitation now");
   }
 
   //   "youremail@example.com"

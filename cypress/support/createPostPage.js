@@ -1,6 +1,9 @@
 class CreatePostPage {
   getPostTitle() {
-    return cy.get("textarea");
+    return cy.get("textarea").then(($text) => {
+      var text = $text.get(0);
+      cy.wrap(text);
+    });
   }
   getPostContent() {
     return cy.get('[data-placeholder="Begin writing your post..."]');
@@ -35,9 +38,6 @@ class CreatePostPage {
   }
   getSecondPublishButton() {
     return cy.get("button > span").contains("Publish");
-  }
-  getThirdPublishButton() {
-    return cy.get("button").contains("Publish");
   }
 }
 
