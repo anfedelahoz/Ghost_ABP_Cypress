@@ -43,6 +43,22 @@ Este repositorio contiene diferentes pruebas E2E realizadas a la apliación Ghos
 **19. Invitar usuario al staff -** invitar como Administrador: Como admninistrador de Ghost iniciar sesión con datos correctos, para invitar una nueva persona al staff del sitio y visualizar que se agrega efectivamente como Administrador.\
 **20. Invitar usuario al staff -** invitar con datos invalido: Como admninistrador de Ghost iniciar sesión con datos correctos, para ingresar datos invalidos en el campo del correo y verificar la correcta verificación y retroalimentación del sitio.
 
+## Funcionalidades Bajo Prueba Versión 3.42
+
+**1. Iniciar sesión como administrador:** Funcionalidad para que un usuario del staff pueda iniciar sesión.\
+**2. Crear nuevo post:** Funcionalidad para que el administrador del contenido del sitio web pueda agregar nuevos posts.\
+**3. Crear página:** Funcionalidad para que el administrador del contenido del sitio web pueda crear una página.\
+**4. Invitar usuario al staff:** Funcionalidad para que un administrador pueda invitar y asignar roles de Contribuidor, Autor, Editor o Administrador.\
+**5. Editar post:** Funcionalidad para que un administrador del contenido del sitio web pueda editar los posts ya creados.\
+
+## Escenarios de Prueba Versión 3.42
+
+**1. Iniciar sesión como administrador-** con usuario registrado: Como admninistrador de Ghost iniciar sesión con datos correctos y ya registrados para acceder al Dashboard de la app.\
+**2. Crear nuevo post -** con preview:  Como admninistrador de Ghost iniciar sesión con datos correctos, y crear un nuevo post público que pueda ser consultado luego.\
+**3. Crear nueva página:** Como admninistrador de Ghost iniciar sesión con datos correctos, y crear una nueva página donde puedan ser añadidos nuevos posts.\
+**4. Invitar usuario al staff -** invitar como Contribuidor: Como admninistrador de Ghost iniciar sesión con datos correctos, para invitar una nueva persona al staff del sitio y visualizar que se agrega efectivamente como Contribuidor.\
+**5. Editar post -** con nuevo contenido de acceso para todos: Como admninistrador de Ghost iniciar sesión con datos correctos, y editar la información de un post público para luego validar la actualización de la información en el sitio web.\
+
 <hr>
 
 # Configuración de Ghost
@@ -87,6 +103,35 @@ Ghost se ejecuta en un proceso en segundo plano separado y permanece ejecutándo
 
 Ejecute la ayuda de Ghost para obtener una lista de los comandos disponibles o explore la [documentación completa de Ghost-CLI](https://ghost.org/docs/ghost-cli/).
 
+
+#### Adicionalmente, para ejecutar dos versiones de Ghost tenga en cuenta las siguientes instrucciones:
+
+Primero, deberá instalar Docker en su computadora.
+
+*[Instalar Docker Desktop en Linux](https://docs.docker.com/desktop/linux/install/)*\
+*[Instalar Docker Desktop en Mac](https://docs.docker.com/desktop/mac/install/)*\
+*[Instalar Docker Desktop en Windows](https://docs.docker.com/desktop/windows/install/)*
+
+
+Luego, deberá instalar en Docker una version diferente a la ya instalada en su máquina personal.
+
+Para de una versión de Ghost mayor a la 4.0.0, deberá instalar la versión 3.42. Esto se puede realizar mediante los comandos de docker:
+
+```
+docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_3.42 ghost:3.42
+```
+
+*Esto desplegará en la siguiente dirección la versión de Ghost Admin:* Ghost 3.42\
+http://localhost:3001/ghost
+
+Si se encuentra haciendo uso de una versión de ghost menor a la 4.0.0, deberá instalar la versión 4.44. Esto se puede realizar mediante los comandos de docker:
+
+```
+docker run -d -e url=http://localhost:3002 -p 3002:2368 --name ghost_4.44.0 ghost:4.44.0
+```
+
+*Esto desplegará en la siguiente dirección la versión de Ghost Admin:* Ghost 4.44.\
+http://localhost:3002/ghost
 
 <!-- End GHOST documentation  -->
 
