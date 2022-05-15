@@ -184,9 +184,8 @@ Estando sobre el directorio 'Ghost_ABP_Cypress', escriba en su terminal escriba 
 cypress open
 ```
 
-Luego, en la ventana de Cypress seleccione el proyecto 'ABP_Ghost.spec.js'. 
-![image](https://user-images.githubusercontent.com/66291589/167269427-f38a96c9-77bf-48ab-97a5-c8dc82a55652.png)
-
+Luego, en la ventana de Cypress seleccione el proyecto 'ABP_Ghost.spec.js' y 'ABP_Ghost_3_42.spec.js. \
+![image](https://user-images.githubusercontent.com/66291589/168494066-20d40226-237e-4299-b3f1-5098bcc869e3.png)
 
 
 Finalmente verá a Cypress en funcionamiento visitando la pagina http://localhost:2368/ y realizando pruebas automatizadas de eventos random. 
