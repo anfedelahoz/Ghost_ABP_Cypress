@@ -11,7 +11,7 @@
 
 Este repositorio contiene diferentes pruebas E2E realizadas a la apliación Ghost usando Cypress, el cual es un framework de testing moderno y todo en uno. Es rápido, fácil de usar y permite ejecutar pruebas sobre cualquier aplicación web. En poco más de 2 años desde su lanzamiento de la versión 1.0.0 se ha convertido en una de las herramientas más populares de testing. Funciona en forma de caja negra, lo que significa que no es necesario tener acceso al código fuente de la aplicación, sino que se puede ejecutar con la URL de la página web. A continuación, podrá encontrar las diferentes funcionalidades probadas, los escenarios evaluados y todo lo necesario para poder ejecutar en su ambiente de trabajo las pruebas.
 
-## Funcionalidades Bajo Prueba: 
+## Funcionalidades Bajo Prueba Versión 4.42 
 
 **1. Iniciar sesión como administrador:** Funcionalidad para que un usuario del staff pueda iniciar sesión.\
 **2. Crear nuevo post:** Funcionalidad para que el administrador del contenido del sitio web pueda agregar nuevos posts.\
@@ -21,7 +21,7 @@ Este repositorio contiene diferentes pruebas E2E realizadas a la apliación Ghos
 **6. Recuperar contraseña:** Funcionalidad para que un usuario pueda recuperar su contraseña en caso de haberla olvidado.\
 **7. Invitar usuario al staff:** Funcionalidad para que un administrador pueda invitar y asignar roles de Contribuidor, Autor, Editor o Administrador.
 
-## Escenarios de Prueba:
+## Escenarios de Prueba Versión 4.42
 **1. Iniciar sesión como administrador-** con usuario registrado: Como admninistrador de Ghost iniciar sesión con datos correctos y ya registrados para acceder al Dashboard de la app.\
 **2. Iniciar sesión como administrador -** con usuario NO registrado: Como admninistrador de Ghost iniciar sesión con datos correctos pero NO registrados para poder acceder al Dashboard de la app.\
 **3. Iniciar sesión como administrador -** con credenciales invalidas: Como admninistrador de Ghost iniciar sesión con datos no validos para ver la correcta validación de los datos y el acceso a la plataforma.\
