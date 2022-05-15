@@ -191,6 +191,32 @@ Luego, en la ventana de Cypress seleccione el proyecto 'ABP_Ghost.spec.js'.
 
 Finalmente verá a Cypress en funcionamiento visitando la pagina http://localhost:2368/ y realizando pruebas automatizadas de eventos random. 
 
+## Instrucciones de Ejecución de Pruebas con Cypress en la Versión 3.42 de Ghost
+
+
+**Nota:** En la ubicación cypress/integration/ABP_Ghost_4_42.spec.js encontrará dos archivos para ejecutar las pruebas tanto en la version 4_42 y la version anterior 3.42, estas apareceran al ejecutar el comando cypress open. 
+
+
+
+## Generación de Reportes de Pruebas de Regresión Visual entre la Versiones 3.42 y 4.42 de Ghost con Resamble.js
+
+Para la ejecucion de pruebas con Resemble deberá tomar los escenarios a probar desde la ubicacion /Ghost_ABP_Cypress/cypress/screenshots en esta encontrara dos carpetas, una para la version 3.42 y otra para la version 4.42, ambas contienne los escenarios.
+Para ejecutar las pruebas debera tomar las imagenes de los mismos escenarios para ambas versiones, luego llevarla a la ubicacion Screenshots_Ghost y ubicarlas en carpetas por funcionalidades a probar y eliminar el escenario que estaba previamente en esa carpeta para probar el nuevo escenario pegado. 
+
+```
+1. Desde la linea de comando, ingresar a la ruta Ghost_ABP_Kraken/features/Screenshot/Resamble_VRT
+2. Corra el comando npm install para instalar lo módulos necesarios para el proyecto de Resamble.js
+3. Abra en visual studio code el archivo index.js, allí encontrará una variable llamada "scenario" que se debe modificar con el nombre del scenario a generar el respectivo reporte de diferencias visuales entre la versiones evaluadas de Ghost para uno de los cinco scenarios seleccionados para VRT.
+4. Corra el comando node index.js y se generará el reporte html de diferencias visuales para el escenario específico en la ruta Ghost_ABP_Kraken/features/Screenshot/{nombre del scenario seleccionado en la anterior paso}.
+```
+**Nota:** Los reportes (report.html) para los cinco scenarios seleccionados los prodrá encontrar en las siguientes rutas:
+
+* Escenario 1: Screenshots_Ghost/Func1/report.html
+* Escenario 4: Screenshots_Ghost/Func4/report.html
+* Escenario 6: Screenshots_Ghost/Func6/report.html
+* Escenario 10: Screenshots_Ghost/Func10/report.html
+* Escenario 16: Screenshots_Ghost/Func16/report.html
+
 
 
 
