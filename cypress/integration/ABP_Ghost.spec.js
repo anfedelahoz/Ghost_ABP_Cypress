@@ -13,7 +13,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
   const createPostPage = new CreatePostPage();
   const port = 2368;
 
-  function loginValid(port) {
+  function loginValid() {
     cy.visit(`http://localhost:${port}/ghost/`);
     cy.wait(1000);
     loginPage.getEmail().type("andelahozg@gmail.com");
@@ -225,7 +225,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
   // END
 });
 
-function createNewMember(name, email, note, port) {
+function createNewMember(name, email, note) {
   const newMemberPage = new CreateMemberPage();
   cy.visit(`http://localhost:${port}/ghost/`);
   cy.wait(3000);
