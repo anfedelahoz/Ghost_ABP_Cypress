@@ -1,10 +1,10 @@
-import LoginPage from "../support/loginPage";
-import Dashboard from "../support/dashboardPage";
-import PostsPage from "../support/postsPage";
-import CreatePostPage from "../support/createPostPage";
-import PagesSection from "../support/pagesSection";
-import CreateMemberPage from "../support/createMember";
-import StaffPage from "../support/staffPage";
+import LoginPage from "../support_v3/loginPage";
+import Dashboard from "../support_v3/dashboardPage";
+import PostsPage from "../support_v3/postsPage";
+import CreatePostPage from "../support_v3/createPostPage";
+import PagesSection from "../support_v3/pagesSection";
+import CreateMemberPage from "../support_v3/createMember";
+import StaffPage from "../support_v3/staffPage";
 
 const loginPage = new LoginPage();
 const dashboardPage = new Dashboard();
