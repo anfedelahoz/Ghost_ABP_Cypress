@@ -11,6 +11,9 @@ const dashboardPage = new Dashboard();
 const postPage = new PostsPage();
 const createPostPage = new CreatePostPage();
 const port = 2368;
+const userAdmin = "YourAdmin@gmail.com";
+const userPassword = "YourPwd#";
+
 
 describe("Prueba Monkey sobre Ghost App", function () {
   function loginValid() {
@@ -21,13 +24,13 @@ describe("Prueba Monkey sobre Ghost App", function () {
         (port == 3001 ? "Before_" : "") +
         `${Cypress.currentTest.title}`
     );
-    loginPage.getEmail().type("andelahozg@gmail.com");
+    loginPage.getEmail().type(userAdmin);
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/` +
         (port == 3001 ? "Before_" : "") +
         `${Cypress.currentTest.title}`
     );
-    loginPage.getPassword().type("Centro2021#");
+    loginPage.getPassword().type(userPassword);
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/` +
         (port == 3001 ? "Before_" : "") +
@@ -93,7 +96,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
         (port == 3001 ? "Before_" : "") +
         `${Cypress.currentTest.title}`
     );
-    loginPage.getPassword().type("Centro2021#");
+    loginPage.getPassword().type(userPassword);
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/` +
         (port == 3001 ? "Before_" : "") +
@@ -421,7 +424,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
 
   it("12_Recuperar_contrasena_usuario_registrado", function () {
     cy.log("12. Escenario con usuario registrado.");
-    recoverPassword("andelahozg@gmail.com");
+    recoverPassword(userAdmin);
     cy.screenshot(
       `Escenario_${Cypress.currentTest.title.slice(0, 2)}/` +
         (port == 3001 ? "Before_" : "") +
