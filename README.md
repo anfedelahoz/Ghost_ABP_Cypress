@@ -211,11 +211,12 @@ Para ejecutar las pruebas debera tomar las imagenes de los mismos escenarios par
 ```
 **Nota:** Los reportes (report.html) para los cinco scenarios seleccionados los prodrá encontrar en las siguientes rutas:
 
-* Scenario3.feature: Ghost_ABP_Kraken/features/Screenshot/scenario3
-* Scenario6.feature: Ghost_ABP_Kraken/features/Screenshot/scenario6
-* Scenario10.feature: Ghost_ABP_Kraken/features/Screenshot/scenario10
-* Scenario11.feature: Ghost_ABP_Kraken/features/Screenshot/scenario11
-* Scenario12.feature: Ghost_ABP_Kraken/features/Screenshot/scenario12
+* Escenario 1: Screenshots_Ghost/Func1/report.html
+* Escenario 4: Screenshots_Ghost/Func4/report.html
+* Escenario 6: Screenshots_Ghost/Func6/report.html
+* Escenario 10: Screenshots_Ghost/Func10/report.html
+* Escenario 16: Screenshots_Ghost/Func16/report.html
+
 
 
 
