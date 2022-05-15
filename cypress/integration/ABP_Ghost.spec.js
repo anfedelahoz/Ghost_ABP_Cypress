@@ -31,12 +31,12 @@ describe("Prueba Monkey sobre Ghost App", function () {
     cy.screenshot(screenshotTitle);
   }
 
-  it("1_Iniciar_sesion_como_administrador_con Usuario_registrado", function () {
+  it("01_Iniciar_sesion_como_administrador_con Usuario_registrado", function () {
     loginValid();
     cy.screenshot(screenshotTitle);
   });
 
-  it("2_Iniciar_sesion_como_administrador_con_Usuario_NO_registrado", function () {
+  it("02_Iniciar_sesion_como_administrador_con_Usuario_NO_registrado", function () {
     cy.visit(`http://localhost:${port}/ghost/`);
     cy.screenshot(screenshotTitle);
     loginPage.getEmail().type("desconocido@gmail.com");
@@ -48,7 +48,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
     cy.screenshot(screenshotTitle);
   });
 
-  it("3_Iniciar_sesion_como_administrador_con_credenciales_invalidas", function () {
+  it("03_Iniciar_sesion_como_administrador_con_credenciales_invalidas", function () {
     cy.visit(`http://localhost:${port}/ghost/`);
     cy.screenshot(screenshotTitle);
     loginPage.getEmail().type("andelahozg");
@@ -59,7 +59,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
     cy.wait(700);
   });
 
-  it("4_Crear_post_con_preview", function () {
+  it("04_Crear_post_con_preview", function () {
     loginValid();
     cy.wait(3500);
     dashboardPage.getPostsMenu().click({ timeOut: 6000 });
@@ -82,7 +82,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
     cy.screenshot(screenshotTitle);
   });
 
-  it("5_Crear_post_con_video_y_de_acceso_solo_para_miembros", function () {
+  it("05_Crear_post_con_video_y_de_acceso_solo_para_miembros", function () {
     loginValid();
     cy.wait(3500);
     dashboardPage.getPostsMenu().click({ timeOut: 6000 });
@@ -131,7 +131,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
     cy.wait(4000);
   });
 
-  it("6 . Crear pagina", function () {
+  it("06 . Crear pagina", function () {
     loginValid();
     const pagesSection = new PagesSection();
     cy.wait(2000);
@@ -157,7 +157,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
     cy.screenshot(screenshotTitle);
   });
 
-  it("7_Crear_nuevo_miembro_manualmente", function () {
+  it("07_Crear_nuevo_miembro_manualmente", function () {
     loginValid();
     createNewMember(
       "George Tester",
@@ -169,7 +169,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
     cy.wait(1000);
   });
 
-  it("8_Crear_nuevo_miembro_manualmente_con_correo_ya_registrado", function () {
+  it("08_Crear_nuevo_miembro_manualmente_con_correo_ya_registrado", function () {
     loginValid();
     cy.wait(3000);
     createNewMember(
@@ -192,7 +192,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
     cy.screenshot(screenshotTitle);
   });
 
-  it("9_Crear_nuevo_miembro_manualmente_con_datos_invalidos", function () {
+  it("09_Crear_nuevo_miembro_manualmente_con_datos_invalidos", function () {
     loginValid();
     cy.wait(3000);
     createNewMember("Sara", "155000", "User added with invalid data.", port);
