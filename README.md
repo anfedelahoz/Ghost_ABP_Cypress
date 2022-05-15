@@ -169,11 +169,11 @@ Ejecute los comandos con Git Bash para completar las siguientes tareas:
 1. En tu editor de codigo dirigete hasta el archivo ABP_Ghost.spec.js.\
 ![image](https://user-images.githubusercontent.com/66291589/167267627-923fe215-a3c9-40f2-b3e5-d83cf50f77ed.png)
 
-2. En este archivo busca la funcion 'loginValid' y modifica los datos ingresados por tus credenciales de Ghost de las líneas 18 y 19.\
-![image](https://user-images.githubusercontent.com/66291589/167269954-27deece1-2357-4f3a-8082-e944690acc4b.png)
+2. En este archivo buscar las variables userAdmin y passwordAdmin y modifique los datos ingresados por tus credenciales de Ghost.\
+![image](https://user-images.githubusercontent.com/66291589/168491501-6ccba085-49a3-472a-871f-5f5b94ed52d4.png)
 
-En el metodo *loginPage.getEmail().type("yourgGhostAdminEmail@gmail")* debera cambiarlo por su correo administrador de Ghost.\
-En el metodo *loginPage.getPassword().type("youreGhostAdminPassword#")* debera cambiarlo por su contrasena administrador de Ghost.
+En la variable *userAdmin* debera cambiarlo por su correo administrador de Ghost.\
+En el metodo *passwordAdmin* debera cambiarlo por su contrasena administrador de Ghost.
 
 
 ### 4. Correr Cypress 
