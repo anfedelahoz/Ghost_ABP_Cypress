@@ -12,32 +12,51 @@ describe("Prueba Monkey sobre Ghost App", function () {
   const postPage = new PostsPage();
   const createPostPage = new CreatePostPage();
   const port = 2368;
+  const screenshotTitle =
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/` +
+    (port == 3001 ? "Before_" : "") +
+    `${Cypress.currentTest.title}`;
 
   function loginValid() {
     cy.visit(`http://localhost:${port}/ghost/`);
     cy.wait(1000);
+    cy.screenshot(screenshotTitle);
     loginPage.getEmail().type("andelahozg@gmail.com");
+    cy.screenshot(screenshotTitle);
     loginPage.getPassword().type("Centro2021#");
+    cy.screenshot(screenshotTitle);
     loginPage.getPassword().type("{enter}");
     loginPage.getLoginButton().click();
+    cy.wait(700);
+    cy.screenshot(screenshotTitle);
   }
 
   it("1_Iniciar_sesion_como_administrador_con Usuario_registrado", function () {
-    loginValid(2368);
+    loginValid();
+    cy.screenshot(screenshotTitle);
   });
 
   it("2_Iniciar_sesion_como_administrador_con_Usuario_NO_registrado", function () {
     cy.visit(`http://localhost:${port}/ghost/`);
+    cy.screenshot(screenshotTitle);
     loginPage.getEmail().type("desconocido@gmail.com");
+    cy.screenshot(screenshotTitle);
     loginPage.getPassword().type("Secret123#");
+    cy.screenshot(screenshotTitle);
     loginPage.getLoginButton().click();
+    cy.wait(700);
+    cy.screenshot(screenshotTitle);
   });
 
   it("3_Iniciar_sesion_como_administrador_con_credenciales_invalidas", function () {
     cy.visit(`http://localhost:${port}/ghost/`);
+    cy.screenshot(screenshotTitle);
     loginPage.getEmail().type("andelahozg");
+    cy.screenshot(screenshotTitle);
     loginPage.getPassword().type("Centro2021#");
+    cy.screenshot(screenshotTitle);
     loginPage.getLoginButton().click();
+    cy.wait(700);
   });
 
   it("4_Crear_post_con_preview", function () {
@@ -45,67 +64,97 @@ describe("Prueba Monkey sobre Ghost App", function () {
     cy.wait(3500);
     dashboardPage.getPostsMenu().click({ timeOut: 6000 });
     cy.wait(2500);
+    cy.screenshot(screenshotTitle);
     postPage.getNewPostButton().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     createPostPage.getPostTitle().type("A post for testing with Cypress");
+    cy.screenshot(screenshotTitle);
     createPostPage.getPostContent().type("Hi there, now we are just testing.");
+    cy.screenshot(screenshotTitle);
     cy.wait(2500);
     createPostPage.getFirstPublishButton().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     cy.wait(2000);
     createPostPage.getSecondPublishButton().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     cy.wait(2000);
     createPostPage.getThirdPublishButton().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
   });
 
   it("5_Crear_post_con_video_y_de_acceso_solo_para_miembros", function () {
     loginValid();
     cy.wait(3500);
     dashboardPage.getPostsMenu().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     cy.wait(3000);
     postPage.getNewPostButton().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     createPostPage.getPostTitle().type("A video post for testing with Cypress");
+    cy.screenshot(screenshotTitle);
     createPostPage.getPostContent().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     createPostPage.getPostFormat().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     cy.wait(2500);
     createPostPage.getYoutubeFormat().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     createPostPage.getPostFormat().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     createPostPage.getYoutubeFormat().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     cy.wait(2500);
     createPostPage
       .getYoutubeUrl()
       .type("https://www.youtube.com/watch?v=5qap5aO4i9A&ab_channel=LofiGirl");
     cy.wait(3500);
+    cy.screenshot(screenshotTitle);
     createPostPage.getPostSettings().click({ force: true });
     cy.wait(1500);
+    cy.screenshot(screenshotTitle);
     createPostPage.getPostAccessDropDown().select("members");
+    cy.screenshot(screenshotTitle);
     createPostPage.getPostSettings().click({ force: true });
+    cy.screenshot(screenshotTitle);
     cy.wait(2000);
     createPostPage.getFirstPublishButton().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     cy.wait(2000);
     createPostPage.getSecondPublishButton().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     cy.wait(2000);
     createPostPage.getThirdPublishButton().click({ timeOut: 6000 });
-    cy.wait(1200);
+    cy.screenshot(screenshotTitle);
+    cy.wait(3000);
     cy.visit(`http://localhost:${port}/`);
+    cy.screenshot(screenshotTitle);
     cy.wait(4000);
   });
 
-  it("6. Crear pagina", function () {
+  it("6 . Crear pagina", function () {
     loginValid();
     const pagesSection = new PagesSection();
     cy.wait(2000);
     pagesSection.getPageMenu().click({ force: true });
+    cy.screenshot(screenshotTitle);
     cy.wait(3000);
     pagesSection.getNewPageButton().click({ force: true });
+    cy.screenshot(screenshotTitle);
     pagesSection.getPageTitle().type("Testing Post");
+    cy.screenshot(screenshotTitle);
     pagesSection
       .getPageContent()
       .type("This page content is for testing purposes.", { force: true });
+    cy.screenshot(screenshotTitle);
     cy.wait(2000);
     pagesSection.getFirstPublishButton().click({ force: true });
+    cy.screenshot(screenshotTitle);
     cy.wait(2000);
     pagesSection.getSecondPublishButton().click({ force: true });
+    cy.screenshot(screenshotTitle);
     cy.wait(2000);
     pagesSection.getThirdPublishButton().click({ force: true });
+    cy.screenshot(screenshotTitle);
   });
 
   it("7_Crear_nuevo_miembro_manualmente", function () {
@@ -116,6 +165,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
       "User added for first time.",
       port
     );
+    cy.screenshot(screenshotTitle);
     cy.wait(1000);
   });
 
@@ -128,8 +178,10 @@ describe("Prueba Monkey sobre Ghost App", function () {
       "User added for first time.",
       port
     );
+    cy.screenshot(screenshotTitle);
     cy.wait(3000);
-    cy.visit(`http://localhost:${port}/ghost/`);
+    cy.visit(`http://localhost:${port}/ghost`);
+    cy.screenshot(screenshotTitle);
     cy.wait(2000);
     createNewMember(
       "Peter",
@@ -137,6 +189,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
       "User with an email that is already registered as member.",
       port
     );
+    cy.screenshot(screenshotTitle);
   });
 
   it("9_Crear_nuevo_miembro_manualmente_con_datos_invalidos", function () {
@@ -144,6 +197,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
     cy.wait(3000);
     createNewMember("Sara", "155000", "User added with invalid data.", port);
     cy.wait(1000);
+    cy.screenshot(screenshotTitle);
   });
 
   it("10_Editar_post_con_nuevo_contenido_de_acceso_todos", function () {
@@ -153,6 +207,7 @@ describe("Prueba Monkey sobre Ghost App", function () {
       "This post was edited for testing purposes.",
       false
     );
+    cy.screenshot(screenshotTitle);
   });
 
   it("11_Editar_post_con_acceso_solo_a_miembros", function () {
@@ -162,17 +217,21 @@ describe("Prueba Monkey sobre Ghost App", function () {
       "This post was edited for testing purposes and with access for only members.",
       true
     );
+    cy.screenshot(screenshotTitle);
     cy.wait(3000);
     cy.visit(`http://localhost:${port}/`);
+    cy.screenshot(screenshotTitle);
   });
 
   it("12_Recuperar_contrasena_usuario_registrado", function () {
     cy.log("12. Escenario con usuario registrado.");
     recoverPassword("andelahozg@gmail.com");
+    cy.screenshot(screenshotTitle);
   });
 
   it("13_Recuperar_contrasena_usuario_NO_registrado", function () {
     recoverPassword("desconocido3000@gmail.com");
+    cy.screenshot(screenshotTitle);
   });
 
   it("14_Recuperar_contrasena_validar_que_se_aplique_el_numero_(5)_de_intentos_limites", function () {
@@ -180,46 +239,64 @@ describe("Prueba Monkey sobre Ghost App", function () {
     for (var i = 0; i < 5; i++) {
       n += i;
       recoverPassword("admin@tester.com");
+      cy.screenshot(
+        `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+          Cypress.currentTest.title
+        }`
+      );
     }
   });
 
   it("15_Recuperar_contrasena_con_datos_invalidos", function () {
     recoverPassword(5501000);
+    cy.screenshot(screenshotTitle);
   });
 
   it("16_Invitar_usuario_al_staff_invitar_como_Contribuidor", function () {
     loginValid();
     invitePeople("a@gmail.com");
-
+    cy.screenshot(screenshotTitle);
     cy.visit(`http://localhost:${port}/ghost/#/settings/staff`);
+    cy.screenshot(screenshotTitle);
   });
 
   it("17_Invitar_usuario_al_staff_invitar_como_Autor", function () {
     loginValid();
     invitePeople("b@gmail.com");
+    cy.screenshot(screenshotTitle);
     cy.wait(1500);
     cy.visit(`http://localhost:${port}/ghost/#/settings/staff`);
+    cy.screenshot(screenshotTitle);
   });
 
   it("18_Invitar_usuarioal_staff_invitar_como_Editor", function () {
     loginValid();
     cy.visit("http://localhost:2368/ghost");
+    cy.screenshot(screenshotTitle);
     invitePeople("c@gmail.com");
+    cy.screenshot(screenshotTitle);
     cy.visit(`http://localhost:${port}/ghost/#/settings/staff`);
+    cy.screenshot(screenshotTitle);
   });
 
   it("19_Invitar_usuario_al_staff_invitar_como_Administrador", function () {
     loginValid();
     cy.visit("http://localhost:2368/ghost");
+    cy.screenshot(screenshotTitle);
     invitePeople("d@gmail.com");
+    cy.screenshot(screenshotTitle);
     cy.visit(`http://localhost:${port}/ghost/#/settings/staff`);
+    cy.screenshot(screenshotTitle);
   });
 
   it("20_Invitar_usuario_al_staff_invitar_con_datos_invalidos", function () {
     loginValid();
     cy.visit(`http://localhost:${port}/ghost/`);
+    cy.screenshot(screenshotTitle);
     invitePeople("2%&*#$^&*");
+    cy.screenshot(screenshotTitle);
     cy.visit(`http://localhost:${port}/ghost/#/settings/staff`);
+    cy.screenshot(screenshotTitle);
   });
 
   // END
@@ -228,18 +305,53 @@ describe("Prueba Monkey sobre Ghost App", function () {
 function createNewMember(name, email, note) {
   const newMemberPage = new CreateMemberPage();
   cy.visit(`http://localhost:${port}/ghost/`);
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   cy.wait(3000);
   newMemberPage.getMembersMenu().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   cy.wait(3500);
   newMemberPage.getNewMemberButton().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   cy.wait(500);
   newMemberPage.getNewMemberName().type(name, { force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   newMemberPage.getNewMemberEmail().type(email, { force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   newMemberPage.getNewMemberNote().type(note, {
     force: true,
   });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   cy.wait(1000);
   newMemberPage.getNewMemberSaveButton().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
 }
 
 function editPost(title, content, accessOnlyMembers) {
@@ -248,42 +360,107 @@ function editPost(title, content, accessOnlyMembers) {
   const createPostPage = new CreatePostPage();
   cy.wait(1000);
   dashboardPage.getPostsMenu().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   cy.wait(2500);
   postsPage.getRandomPost().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   cy.wait(3000);
   createPostPage.getPostTitle().clear();
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   createPostPage.getPostTitle().type(title, { force: true });
-
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   createPostPage.getPostContent().clear();
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   createPostPage.getPostContent().type(content, {
     force: true,
   });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
 
   if (accessOnlyMembers == true) {
     createPostPage.getPostSettings().click({ force: true });
+    cy.screenshot(screenshotTitle);
     cy.wait(1500);
     createPostPage.getPostAccessDropDown().select("members");
+    cy.screenshot(screenshotTitle);
     createPostPage.getPostSettings().click({ force: true });
+    cy.screenshot(screenshotTitle);
     cy.wait(2000);
     createPostPage.getFirstPublishButton().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     cy.wait(2000);
     createPostPage.getSecondPublishButton().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
     cy.wait(2000);
     createPostPage.getThirdPublishButton().click({ timeOut: 6000 });
+    cy.screenshot(screenshotTitle);
   }
   cy.wait(2000);
   createPostPage.getFirstPublishButton().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   cy.wait(2000);
   createPostPage.getFirstPublishButton().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   cy.wait(2000);
   createPostPage.getFirstPublishButton().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
 }
 
 function invitePeople(email, roleStaff) {
   const staffPage = new StaffPage();
   staffPage.getSettings().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   staffPage.getStaff().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   staffPage.getInviteButton().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   cy.wait(5000);
   if (roleStaff == "Author") {
     staffPage.getAuthor().click({ force: true });
@@ -294,14 +471,49 @@ function invitePeople(email, roleStaff) {
   } else {
     staffPage.getContributor().click({ force: true });
   }
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   staffPage.getStaffEmail().type(email);
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   staffPage.getSendButton().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   cy.visit(`http://localhost:${port}/ghost/#/settings/staff`);
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
 }
 
 function recoverPassword(email, attemps) {
   const loginPage = new LoginPage();
   cy.visit(`http://localhost:${port}/ghost`);
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   loginPage.getEmail().type(email);
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
   loginPage.getForgetPassword().click({ force: true });
+  cy.screenshot(
+    `Escenario_${Cypress.currentTest.title.slice(0, 2)}/${
+      Cypress.currentTest.title
+    }`
+  );
 }
