@@ -10,7 +10,7 @@ async function executeTest() {
     return;
   }
   let resultInfo = {};
-  let scenario = "Func5";
+  let scenario = "Func4";
   for (b of browsers) {
     if (!b in ["chromium"]) {
       return;
