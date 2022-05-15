@@ -11,7 +11,7 @@
 
 Este repositorio contiene diferentes pruebas E2E realizadas a la apliación Ghost usando Cypress, el cual es un framework de testing moderno y todo en uno. Es rápido, fácil de usar y permite ejecutar pruebas sobre cualquier aplicación web. En poco más de 2 años desde su lanzamiento de la versión 1.0.0 se ha convertido en una de las herramientas más populares de testing. Funciona en forma de caja negra, lo que significa que no es necesario tener acceso al código fuente de la aplicación, sino que se puede ejecutar con la URL de la página web. A continuación, podrá encontrar las diferentes funcionalidades probadas, los escenarios evaluados y todo lo necesario para poder ejecutar en su ambiente de trabajo las pruebas.
 
-## Funcionalidades Bajo Prueba: 
+## Funcionalidades Bajo Prueba Versión 4.42 
 
 **1. Iniciar sesión como administrador:** Funcionalidad para que un usuario del staff pueda iniciar sesión.\
 **2. Crear nuevo post:** Funcionalidad para que el administrador del contenido del sitio web pueda agregar nuevos posts.\
@@ -21,7 +21,7 @@ Este repositorio contiene diferentes pruebas E2E realizadas a la apliación Ghos
 **6. Recuperar contraseña:** Funcionalidad para que un usuario pueda recuperar su contraseña en caso de haberla olvidado.\
 **7. Invitar usuario al staff:** Funcionalidad para que un administrador pueda invitar y asignar roles de Contribuidor, Autor, Editor o Administrador.
 
-## Escenarios de Prueba:
+## Escenarios de Prueba Versión 4.42
 **1. Iniciar sesión como administrador-** con usuario registrado: Como admninistrador de Ghost iniciar sesión con datos correctos y ya registrados para acceder al Dashboard de la app.\
 **2. Iniciar sesión como administrador -** con usuario NO registrado: Como admninistrador de Ghost iniciar sesión con datos correctos pero NO registrados para poder acceder al Dashboard de la app.\
 **3. Iniciar sesión como administrador -** con credenciales invalidas: Como admninistrador de Ghost iniciar sesión con datos no validos para ver la correcta validación de los datos y el acceso a la plataforma.\
@@ -42,6 +42,22 @@ Este repositorio contiene diferentes pruebas E2E realizadas a la apliación Ghos
 **18. Invitar usuario al staff -** invitar como Editor: Como admninistrador de Ghost iniciar sesión con datos correctos, para invitar una nueva persona al staff del sitio y visualizar que se agrega efectivamente como Editor.\
 **19. Invitar usuario al staff -** invitar como Administrador: Como admninistrador de Ghost iniciar sesión con datos correctos, para invitar una nueva persona al staff del sitio y visualizar que se agrega efectivamente como Administrador.\
 **20. Invitar usuario al staff -** invitar con datos invalido: Como admninistrador de Ghost iniciar sesión con datos correctos, para ingresar datos invalidos en el campo del correo y verificar la correcta verificación y retroalimentación del sitio.
+
+## Funcionalidades Bajo Prueba Versión 3.42
+
+**1. Iniciar sesión como administrador:** Funcionalidad para que un usuario del staff pueda iniciar sesión.\
+**2. Crear nuevo post:** Funcionalidad para que el administrador del contenido del sitio web pueda agregar nuevos posts.\
+**3. Crear página:** Funcionalidad para que el administrador del contenido del sitio web pueda crear una página.\
+**4. Invitar usuario al staff:** Funcionalidad para que un administrador pueda invitar y asignar roles de Contribuidor, Autor, Editor o Administrador.\
+**5. Editar post:** Funcionalidad para que un administrador del contenido del sitio web pueda editar los posts ya creados.\
+
+## Escenarios de Prueba Versión 3.42
+
+**1. Iniciar sesión como administrador-** con usuario registrado: Como admninistrador de Ghost iniciar sesión con datos correctos y ya registrados para acceder al Dashboard de la app.\
+**2. Crear nuevo post -** con preview:  Como admninistrador de Ghost iniciar sesión con datos correctos, y crear un nuevo post público que pueda ser consultado luego.\
+**3. Crear nueva página:** Como admninistrador de Ghost iniciar sesión con datos correctos, y crear una nueva página donde puedan ser añadidos nuevos posts.\
+**4. Invitar usuario al staff -** invitar como Contribuidor: Como admninistrador de Ghost iniciar sesión con datos correctos, para invitar una nueva persona al staff del sitio y visualizar que se agrega efectivamente como Contribuidor.\
+**5. Editar post -** con nuevo contenido de acceso para todos: Como admninistrador de Ghost iniciar sesión con datos correctos, y editar la información de un post público para luego validar la actualización de la información en el sitio web.\
 
 <hr>
 
@@ -88,6 +104,35 @@ Ghost se ejecuta en un proceso en segundo plano separado y permanece ejecutándo
 Ejecute la ayuda de Ghost para obtener una lista de los comandos disponibles o explore la [documentación completa de Ghost-CLI](https://ghost.org/docs/ghost-cli/).
 
 
+#### Adicionalmente, para ejecutar dos versiones de Ghost tenga en cuenta las siguientes instrucciones:
+
+Primero, deberá instalar Docker en su computadora.
+
+*[Instalar Docker Desktop en Linux](https://docs.docker.com/desktop/linux/install/)*\
+*[Instalar Docker Desktop en Mac](https://docs.docker.com/desktop/mac/install/)*\
+*[Instalar Docker Desktop en Windows](https://docs.docker.com/desktop/windows/install/)*
+
+
+Luego, deberá instalar en Docker una version diferente a la ya instalada en su máquina personal.
+
+Para de una versión de Ghost mayor a la 4.0.0, deberá instalar la versión 3.42. Esto se puede realizar mediante los comandos de docker:
+
+```
+docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_3.42 ghost:3.42
+```
+
+*Esto desplegará en la siguiente dirección la versión de Ghost Admin:* Ghost 3.42\
+http://localhost:3001/ghost
+
+Si se encuentra haciendo uso de una versión de ghost menor a la 4.0.0, deberá instalar la versión 4.44. Esto se puede realizar mediante los comandos de docker:
+
+```
+docker run -d -e url=http://localhost:3002 -p 3002:2368 --name ghost_4.44.0 ghost:4.44.0
+```
+
+*Esto desplegará en la siguiente dirección la versión de Ghost Admin:* Ghost 4.44.\
+http://localhost:3002/ghost
+
 <!-- End GHOST documentation  -->
 
 # Configuración de Cypress.io
@@ -110,7 +155,7 @@ Siga estas instrucciones para [instalar Cypress](https://on.cypress.io/installin
 En caso de usar npm ejecute el siguiente comando.
 
 ```
-ghost install
+npm install cypress --save-dev
 ```
 
 
@@ -124,8 +169,8 @@ Ejecute los comandos con Git Bash para completar las siguientes tareas:
 1. En tu editor de codigo dirigete hasta el archivo ABP_Ghost.spec.js.\
 ![image](https://user-images.githubusercontent.com/66291589/167267627-923fe215-a3c9-40f2-b3e5-d83cf50f77ed.png)
 
-2. En este archivo busca la funcion 'loginValid' y modifica los datos ingresados por tus credenciales de Ghost.\
-![image](https://user-images.githubusercontent.com/66291589/167267737-cb576393-f33b-49c0-931b-7b2f7d22a697.png)
+2. En este archivo busca la funcion 'loginValid' y modifica los datos ingresados por tus credenciales de Ghost de las líneas 18 y 19.\
+![image](https://user-images.githubusercontent.com/66291589/167269954-27deece1-2357-4f3a-8082-e944690acc4b.png)
 
 En el metodo *loginPage.getEmail().type("yourgGhostAdminEmail@gmail")* debera cambiarlo por su correo administrador de Ghost.\
 En el metodo *loginPage.getPassword().type("youreGhostAdminPassword#")* debera cambiarlo por su contrasena administrador de Ghost.
@@ -134,7 +179,7 @@ En el metodo *loginPage.getPassword().type("youreGhostAdminPassword#")* debera c
 ### 4. Correr Cypress 
 Ahora estamos listos para ejecutar las pruebas de Cypress.
 
-En su terminal escriba el siguiente comando:
+Estando sobre el directorio 'Ghost_ABP_Cypress', escriba en su terminal escriba el siguiente comando:
 ```bash
 cypress open
 ```
