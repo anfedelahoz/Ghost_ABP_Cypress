@@ -11,8 +11,8 @@ const dashboardPage = new Dashboard();
 const postPage = new PostsPage();
 const createPostPage = new CreatePostPage();
 const port = 3001;
-const userAdmin = "andelahozg@gmail.com";
-const userPassword = "Centro2021#";
+const userAdmin = "YourAdmin@gmail.com";
+const userPassword = "YourPwd#";
 
 describe("Prueba Monkey sobre Ghost App", function () {
   function loginValid() {
