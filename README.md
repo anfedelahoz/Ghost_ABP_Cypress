@@ -194,12 +194,15 @@ Finalmente verá a Cypress en funcionamiento visitando la pagina http://localhos
 ## Instrucciones de Ejecución de Pruebas con Cypress en la Versión 3.42 de Ghost
 
 
-**Nota:** En la ubicación cypress/integration/ABP_Ghost_4_42.spec.js encontrará dos archivos para ejecutar las pruebas tnanto en la version 4_42 y la version anterior 3.42, estas apareceran al ejecutar el comando cypress open. Para la ejecucion de pruebas con Resemble deberá tomar los escenarios a probar desde la ubicacion /Ghost_ABP_Cypress/cypress/screenshots en esta encontrara dos carpetas, una para la version 3.42 y otra para la version 4.42, ambas contienne los escenarios.
-Para ejecutar las pruebas debera tomar las imagenes de los mismos escenarios para ambas versiones, luego llevarla a la ubicacion Screenshots_Ghost y ubicarlas en carpetas por funcionalidades a probar y eliminar el escenario que estaba previamente en esa carpeta para probar el nuevo escenario pegado. 
+**Nota:** En la ubicación cypress/integration/ABP_Ghost_4_42.spec.js encontrará dos archivos para ejecutar las pruebas tanto en la version 4_42 y la version anterior 3.42, estas apareceran al ejecutar el comando cypress open. 
 
 
 
 ## Generación de Reportes de Pruebas de Regresión Visual entre la Versiones 3.42 y 4.42 de Ghost con Resamble.js
+
+Para la ejecucion de pruebas con Resemble deberá tomar los escenarios a probar desde la ubicacion /Ghost_ABP_Cypress/cypress/screenshots en esta encontrara dos carpetas, una para la version 3.42 y otra para la version 4.42, ambas contienne los escenarios.
+Para ejecutar las pruebas debera tomar las imagenes de los mismos escenarios para ambas versiones, luego llevarla a la ubicacion Screenshots_Ghost y ubicarlas en carpetas por funcionalidades a probar y eliminar el escenario que estaba previamente en esa carpeta para probar el nuevo escenario pegado. 
+
 ```
 1. Desde la linea de comando, ingresar a la ruta Ghost_ABP_Kraken/features/Screenshot/Resamble_VRT
 2. Corra el comando npm install para instalar lo módulos necesarios para el proyecto de Resamble.js
