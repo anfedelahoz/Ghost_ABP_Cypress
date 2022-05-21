@@ -218,3 +218,16 @@ Para ejecutar las pruebas debera tomar las imagenes de los mismos escenarios par
 
 ## Instrucciones de Ejecución de Pruebas para ejecutar Estrategia de Generacion de Datos
 * En la ruta cypress/integration encontrara 4 archivos nuevos donde debera cambiar las variables *userAdmin* y *userPassword* por sus variables de administrador en Ghost para luego asi ejecutar los 4 archivos de pruebas, donde cada uno contiene 30 escenarios de pruebas realizados con las tres estrategias solicitadas: pool de datos a-priori, pool de datos (pseudo) aleatorio dinámico y escenario aleatorio.
+* Los archivos a ejecutar son: 
+
+| Archivo |
+|---------|
+|ABP_Ghost_EditarPerfil.spec.js | 
+| ABP_Ghost_Login_Recuperar_Password_Crear_Editar_Tag.spec.js|
+|ABP_Ghost_Post_Navegation.spec.js |
+|ABP_Ghost_Crear_Pagina_Crear_Miembro.spec.js |
+
+**Nota:** Para la implementacion de estas pruebas se utiliza la libreria FakerJS por lo que antes de ejecutar los 4 archivos de pruebas debe instalar la dependencia de la siguiente manera: 
+```
+npm install @faker-js/faker --save-dev
+```
