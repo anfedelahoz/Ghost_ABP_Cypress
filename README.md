@@ -227,7 +227,7 @@ Para ejecutar las pruebas debera tomar las imagenes de los mismos escenarios par
 |ABP_Ghost_Post_Navegation.spec.js |
 |ABP_Ghost_Crear_Pagina_Crear_Miembro.spec.js |
 
-**Nota:** Para la implementacion de estas pruebas se utiliza la libreria FakerJS por lo que antes de ejecutar los 4 archivos de pruebas debe instalar la dependencia de la siguiente manera: 
+**Nota:** Para la implementacion de estas pruebas se utiliza la libreria FakerJS por lo que antes de ejecutar los 4 archivos de pruebas debe instalar la dependencia de la siguiente manera desde el directorio raíz del repositorio: 
 ```
 npm install @faker-js/faker --save-dev
 ```
