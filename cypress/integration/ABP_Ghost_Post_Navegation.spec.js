@@ -13,8 +13,8 @@ const postPage = new PostsPage();
 const createPostPage = new CreatePostPage();
 const navegation = new Navegation();
 const port = 2368;
-const userAdmin = "pedro@hotmail.com";
-const userPassword = "1234567890.";
+const userAdmin = "tamayo998@hotmail.com";
+const userPassword = "1234567890&";
 const esc1 = [
     "Completo la ilusion del val ni",
     "La constante de la inercia, es igual al pot de la entrada + la cap de corto cir entre los elementos"
