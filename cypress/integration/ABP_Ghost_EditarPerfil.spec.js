@@ -6,8 +6,8 @@ const { faker } = require("@faker-js/faker");
 const loginPage = new LoginPage();
 const profilePage = new ProfilePage();
 const port = 2368;
-const userAdmin = "tamayo998@hotmail.com";
-const userPassword = "1234567890&";
+const userAdmin = "yourAdmin@hotmail.com";
+const userPassword = "yourPasword&";
 
 // Pool de datos a-priori:
 
