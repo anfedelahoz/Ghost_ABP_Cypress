@@ -216,7 +216,7 @@ Para ejecutar las pruebas debera tomar las imagenes de los mismos escenarios par
 * Escenario 10: Screenshots_Ghost/Func10/report.html
 * Escenario 16: Screenshots_Ghost/Func16/report.html
 
-## Instrucciones de Ejecución de Pruebas para ejecutar Estrategia de Generacion de Datos
+## Instrucciones de Ejecución de Pruebas para Ejecutar Estrategias de Generacion de Datos
 * En la ruta cypress/integration encontrara 4 archivos nuevos donde debera cambiar las variables *userAdmin* y *userPassword* por sus variables de administrador en Ghost para luego asi ejecutar los 4 archivos de pruebas, donde cada uno contiene 30 escenarios de pruebas realizados con las tres estrategias solicitadas: pool de datos a-priori, pool de datos (pseudo) aleatorio dinámico y escenario aleatorio.
 * Los archivos a ejecutar son: 
 
