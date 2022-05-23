@@ -31,6 +31,9 @@ class CreateMemberPage {
     });
   }
 
+
+  
+
   getNewMemberSaveButton() {
     return cy
       .get("span")
@@ -40,6 +43,39 @@ class CreateMemberPage {
         cy.wrap(text);
       });
   }
+
+
+  getExistMensajeEmailDuplicado(){
+    return cy.get("div").contains("Validation error, cannot save member. Member already exists. Attempting to add member with existing email address");
+  
+  }
+  getExistMensajeExcedioCaracteresNota(){
+    return cy.get("p").contains("Note is too long.");
+  
+  }
+  getExistMensajeMensajeInvalido(){
+    return cy.get('[class="form-group max-width error ember-view"]' );
+    
+  
+  }
+  
+
+  getNewMemberLabel() {
+    return cy.get('[class="ember-power-select-trigger-multiple-input"]').then(($text) => {
+      var text = $text.get(0);
+      cy.wrap(text);
+    });
+  }
+
+  getNewLabelAddButon(){
+    return cy.get('[class="ember-power-select-option"]').contains("Add");  
+
+  }
+  getNewLabelCheckSubscripcion(){
+    return cy.get('span[class="input-toggle-component"]');  ;  
+
+  }
+
 }
 
 export default CreateMemberPage;
